@@ -1,0 +1,9 @@
+{
+  "name": "revophubs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RevOpHubs — a SmartLinks initiative for practical Revenue Operations knowledge, research and tools.",
+  "scripts": {
+    "build": "node scripts/enrich-seo.mjs && node scripts/build-discovery.mjs && node scripts/audit-site.mjs"
+  }
+}

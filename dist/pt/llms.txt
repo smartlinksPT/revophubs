@@ -1,0 +1,32 @@
+# RevOpHubs
+
+> Uma iniciativa SmartLinks com conhecimento, investigação e ferramentas práticas para construir sistemas de receita conectados.
+
+A versão canónica para humanos está em https://revophubs.com/pt/. Cada link abaixo aponta para uma versão Markdown equivalente.
+
+## Páginas principais
+- [RevOpHubs — Revenue Operations, na prática](https://revophubs.com/pt/markdown/index.md): Conhecimento de Revenue Operations, modelos práticos e ferramentas de diagnóstico da SmartLinks para construir um sistema de receita conectado.
+- [Aprender Revenue Operations — RevOpHubs](https://revophubs.com/pt/markdown/learn.md): Guias práticos de Revenue Operations organizados em torno de estratégia, processo, CRM, dados, automação e IA.
+- [Hubs de conhecimento de Revenue Operations — RevOpHubs](https://revophubs.com/pt/markdown/hubs.md): Explore hubs de conhecimento conectados sobre estratégia de receita, processo, CRM, dados, automação e IA.
+- [Fundamentos de Revenue Operations — RevOpHubs](https://revophubs.com/pt/markdown/fundamentals.md): Compreenda o que é Revenue Operations, de onde surgiu, porque é relevante hoje e como começar a construir um sistema de receita conectado.
+- [AI-Powered RevOps — RevOpHubs](https://revophubs.com/pt/markdown/ai-revops.md): Um modelo operacional prático para aplicar IA em Revenue Operations com contexto fiável, responsabilidade humana, governação e resultados mensuráveis.
+- [Ferramentas de IA para Revenue Operations — RevOpHubs](https://revophubs.com/pt/markdown/ai-tools.md): Um guia prático, organizado por trabalho, para ferramentas de IA em Revenue Operations: IA nativa do CRM, conversas, enriquecimento e orquestração.
+- [Ferramentas de Revenue Operations — RevOpHubs](https://revophubs.com/pt/markdown/tools.md): Ferramentas práticas para avaliar um sistema de receita, explorar as suas dependências e preparar uma mudança de CRM.
+- [Princípios de investigação — RevOpHubs](https://revophubs.com/pt/markdown/research.md): Os princípios e a agenda de investigação da RevOpHubs.
+- [Sobre a RevOpHubs e a SmartLinks](https://revophubs.com/pt/markdown/about.md): A RevOpHubs é uma iniciativa de conhecimento e ferramentas de Revenue Operations mantida pela SmartLinks, consultora de crescimento B2B em Portugal.
+- [O modelo do sistema de receita — RevOpHubs](https://revophubs.com/pt/markdown/model.md): Explore as seis camadas conectadas de um sistema de receita operacional: estratégia, processo, CRM, dados, automação e IA.
+- [Diagnóstico do sistema de receita — RevOpHubs](https://revophubs.com/pt/markdown/assessment.md): Um diagnóstico indicativo de estratégia, processo, CRM, dados, automação e IA.
+- [Teste de preparação do CRM — RevOpHubs](https://revophubs.com/pt/markdown/readiness.md): Verifique se a sua organização está preparada para redesenhar ou migrar o CRM.
+
+## Artigos
+- [O que é Revenue Operations? Definição, origem e relevância — RevOpHubs](https://revophubs.com/pt/markdown/articles/what-is-revops.md): Um guia prático sobre o significado de RevOps, a origem de Revenue Operations, a diferença face a Sales Operations e a sua relevância atual.
+- [RevOps não é um departamento. É um sistema operativo. — RevOpHubs](https://revophubs.com/pt/markdown/articles/revops-operating-system.md): Uma definição prática de Revenue Operations como o sistema que liga estratégia, processo, CRM, dados, automação e IA.
+- [Porque é que mais pipeline não resolve um problema de sistema — RevOpHubs](https://revophubs.com/pt/markdown/articles/pipeline-system-problem.md): Como distinguir um problema de procura de um problema de conversão, processo ou dados antes de aumentar o pipeline.
+- [A receita perde-se nas passagens de trabalho — RevOpHubs](https://revophubs.com/pt/markdown/articles/revenue-handoffs.md): Um método prático para encontrar e reparar perdas de receita entre marketing, vendas e equipas de clientes.
+- [A adoção do CRM é uma questão de desenho operacional — RevOpHubs](https://revophubs.com/pt/markdown/articles/crm-adoption-design.md): Porque a adoção do CRM depende do desenho operacional, do valor para o utilizador e da governação — não apenas da formação.
+- [A preparação para IA começa antes da camada de IA — RevOpHubs](https://revophubs.com/pt/markdown/articles/ai-ready-revenue-system.md): As condições operacionais que tornam a IA fiável, governada e útil em todo o sistema de receita.
+
+## Descoberta e políticas
+- [Sitemap](https://revophubs.com/sitemap.xml)
+- [Robots and content signals](https://revophubs.com/robots.txt)
+- [Índice inglês](https://revophubs.com/llms.txt)

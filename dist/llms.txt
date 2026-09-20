@@ -1,0 +1,32 @@
+# RevOpHubs
+
+> A SmartLinks initiative with practical knowledge, research and tools for building connected revenue systems.
+
+The canonical human-readable site is at https://revophubs.com/. Each link below points to an equivalent Markdown version.
+
+## Core pages
+- [RevOpHubs — Revenue Operations, made operational](https://revophubs.com/markdown/index.md): Practical Revenue Operations knowledge, frameworks and diagnostic tools from SmartLinks for building a connected revenue system.
+- [Learn Revenue Operations — RevOpHubs](https://revophubs.com/markdown/learn.md): Practical Revenue Operations guides organised around strategy, process, CRM, data, automation and AI.
+- [Revenue Operations Knowledge Hubs — RevOpHubs](https://revophubs.com/markdown/hubs.md): Explore connected knowledge hubs for revenue strategy, process, CRM, data, automation and AI.
+- [Revenue Operations Fundamentals — RevOpHubs](https://revophubs.com/markdown/fundamentals.md): Understand what Revenue Operations is, where RevOps came from, why it matters now and how to begin building a connected revenue system.
+- [AI-Powered RevOps — RevOpHubs](https://revophubs.com/markdown/ai-revops.md): A practical operating model for applying AI across Revenue Operations with trusted context, human ownership, governance and measurable outcomes.
+- [AI Tools for Revenue Operations — RevOpHubs](https://revophubs.com/markdown/ai-tools.md): A practical, job-based guide to AI tools for Revenue Operations, including CRM-native AI, conversation intelligence, enrichment and workflow orchestration.
+- [Revenue Operations Tools — RevOpHubs](https://revophubs.com/markdown/tools.md): Practical tools for assessing a revenue system, exploring its dependencies and preparing CRM change.
+- [Research Principles — RevOpHubs](https://revophubs.com/markdown/research.md): The principles and research agenda behind RevOpHubs.
+- [About RevOpHubs and SmartLinks](https://revophubs.com/markdown/about.md): RevOpHubs is a Revenue Operations knowledge and tools initiative maintained by SmartLinks, a B2B growth consultancy in Portugal.
+- [The Revenue System Model — RevOpHubs](https://revophubs.com/markdown/model.md): Explore the six connected layers of an operational revenue system: strategy, process, CRM, data, automation and AI.
+- [Revenue System Assessment — RevOpHubs](https://revophubs.com/markdown/assessment.md): A directional diagnostic across strategy, process, CRM, data, automation and AI.
+- [CRM Readiness Check — RevOpHubs](https://revophubs.com/markdown/readiness.md): Check whether your organisation is ready to redesign or migrate its CRM.
+
+## Articles
+- [What Is Revenue Operations? Definition, Origins and Relevance — RevOpHubs](https://revophubs.com/markdown/articles/what-is-revops.md): A practical guide to what RevOps means, how Revenue Operations emerged, how it differs from Sales Operations and why it matters now.
+- [RevOps Is Not a Department. It Is an Operating System. — RevOpHubs](https://revophubs.com/markdown/articles/revops-operating-system.md): A practical definition of Revenue Operations as the system connecting strategy, process, CRM, data, automation and AI.
+- [Why More Pipeline Does Not Solve a System Problem — RevOpHubs](https://revophubs.com/markdown/articles/pipeline-system-problem.md): How to distinguish a demand problem from a conversion, process or data problem before increasing pipeline.
+- [Revenue Leaks at the Hand-offs — RevOpHubs](https://revophubs.com/markdown/articles/revenue-handoffs.md): A practical method for finding and repairing revenue loss between marketing, sales and customer teams.
+- [CRM Adoption Is an Operating-Design Issue — RevOpHubs](https://revophubs.com/markdown/articles/crm-adoption-design.md): Why CRM adoption depends on operating design, user value and governance — not training alone.
+- [AI Readiness Starts Before the AI Layer — RevOpHubs](https://revophubs.com/markdown/articles/ai-ready-revenue-system.md): The operational conditions that make AI reliable, governed and useful across a revenue system.
+
+## Discovery and policies
+- [Sitemap](https://revophubs.com/sitemap.xml)
+- [Robots and content signals](https://revophubs.com/robots.txt)
+- [Portuguese index](https://revophubs.com/pt/llms.txt)

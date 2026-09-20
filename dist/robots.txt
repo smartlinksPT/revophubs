@@ -1,0 +1,26 @@
+# RevOpHubs welcomes search crawlers and user-directed AI agents.
+# The Content-Signal preference permits search and real-time AI input, but not model training.
+User-agent: *
+Allow: /
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://revophubs.com/sitemap.xml
+Host: revophubs.com

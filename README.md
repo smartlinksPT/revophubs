@@ -12,7 +12,7 @@ Use these settings when connecting this repository to Cloudflare Pages:
 - Framework preset: `None`
 - Build command: `npm run build`
 - Build output directory: `dist`
-- Root directory: `/`
+- Root directory: leave blank (repository root)
 
 The intended production domain is [revophubs.com](https://revophubs.com).
 

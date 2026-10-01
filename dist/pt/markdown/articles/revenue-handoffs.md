@@ -19,7 +19,7 @@ Processo · 8 min de leitura
 
 A maior parte da perda entre funções não é dramática. Surge como espera, contexto em falta, trabalho repetido e decisões pelas quais ninguém é explicitamente responsável.
 
-Guia de campo RevOpHubs · Setembro de 2026
+Guia de campo RevOpHubs · Publicado em setembro de 2026 · Atualizado em 1 de outubro de 2026
 
 Dentro de cada função, o trabalho pode parecer saudável. O marketing entrega leads. As vendas aceitam-nos. Customer success recebe o cliente contratado. Mas o cliente vive uma jornada, não o organograma. Cada transição entre equipas cria um momento em que o contexto, o tempo e a responsabilização podem desaparecer.
 
@@ -54,6 +54,50 @@ Para essa transição, responda:
 - Quem aceita o trabalho e em que prazo de resposta?
 - O que acontece quando os critérios não são cumpridos?
 - Que métrica mostra se a passagem melhorou?
+
+## O que deve incluir a passagem de marketing para vendas?
+
+A passagem de marketing para vendas deve incluir um critério de qualificação, o contexto do comprador, um responsável de vendas identificado, um prazo de resposta e uma decisão explícita de aceitação ou devolução. Mudar o responsável no CRM, por si só, não confirma que vendas consegue agir.
+
+## Exemplo prático: um comprador pede uma demonstração
+
+**Exemplo ilustrativo, não um caso de cliente nem um benchmark do setor.** Um comprador B2B pede uma demonstração depois de ler um guia de produto. O marketing regista a origem, mas vendas recebe apenas um nome e um endereço de email. O comercial precisa de reconstruir o pedido antes de decidir o que fazer.
+
+As equipas acordam o seguinte contrato operacional. O prazo de um dia útil é um ponto de partida proposto para este exemplo; defina o seu objetivo com base na cobertura da equipa, nas expectativas do comprador e nos tempos de resposta observados.
+
+- **Evento de início:** um comprador pede uma demonstração e a empresa cumpre os critérios acordados de adequação da conta. O download de um conteúdo, por si só, não inicia este percurso.
+
+- **Contexto necessário:** empresa, contactos fornecidos pelo comprador, pedido, produto ou caso de utilização de interesse, origem e interações anteriores relevantes. Registe como desconhecida a informação que não tem; não invente orçamento nem autoridade de compra.
+
+- **Responsável:** atribua o registo a um comercial identificado segundo as regras acordadas de território ou conta. Defina um responsável pela fila dos casos que não podem ser atribuídos.
+
+- **Aceitação:** no prazo de um dia útil, o comercial regista a aceitação, com próxima ação e data, ou a devolução, com um motivo específico. A aceitação é uma decisão de trabalho; não cria automaticamente uma oportunidade qualificada.
+
+- **Exceção:** devolva um registo incompleto a um responsável de marketing identificado, indicando o campo em falta e o prazo. Encaminhe decisões fora de prazo para o responsável de vendas. Mantenha o comprador informado enquanto as equipas resolvem a exceção.
+
+O CRM precisa de tornar este acordo visível: momento da passagem, responsável recetor, momento da decisão, motivo e próxima ação. Pode representar estes elementos com propriedades, estados ou tarefas no CRM existente. Acorde o seu significado antes de configurar o fluxo.
+
+## Como medir se a passagem de trabalho melhorou?
+
+Estabeleça uma referência com registos recentes e compare a mesma transição depois da mudança. Mantenha consistentes o segmento, o período de observação e as regras de qualificação; uma amostra pequena pode revelar padrões de falha, mas não demonstra impacto na receita de toda a empresa.
+
+- **Taxa de aceitação:** passagens aceites a dividir por todas as passagens do grupo selecionado. Apresente separadamente os registos devolvidos e os que continuam pendentes.
+
+- **Tempo de decisão:** tempo entre o evento de início e a aceitação ou devolução. Acompanhe a mediana e os registos pendentes mais antigos. Indique se usa horas úteis ou horas de calendário.
+
+- **Taxa de completude:** registos com todos os campos obrigatórios acordados preenchidos na passagem a dividir por todas as passagens. Verifique a exatidão separadamente; um campo preenchido pode estar errado.
+
+- **Taxa de retrabalho:** passagens que exigem esclarecimento ou correção antes de o trabalho começar a dividir por todas as passagens. Use motivos normalizados para identificar causas recorrentes.
+
+- **Progressão comercial:** passagens aceites que chegam à próxima etapa relevante acordada dentro de uma janela de acompanhamento definida a dividir pelas passagens aceites com essa janela completa de observação. Aceitar mais depressa, por si só, não demonstra melhor conversão.
+
+## Faça uma auditoria à passagem de trabalho em duas semanas
+
+**Primeira semana:** os responsáveis pelo processo de marketing e vendas analisam uma amostra gerível de pedidos recentes de demonstração, incluindo devoluções e registos pendentes. Seguem o evento de início, contexto, responsável, decisão e próxima ação. Identificam uma falha recorrente e acordam o contrato acima para essa transição.
+
+**Segunda semana:** testam o contrato, registam exceções e comparam em conjunto as métricas de referência. A entrega é um acordo de passagem de trabalho de uma página, um registo de exceções e uma decisão sobre as regras estáveis a automatizar. Continuam a observar a progressão comercial depois do teste quando o ciclo de venda o exigir.
+
+Para um diagnóstico mais amplo, use o [diagnóstico do sistema de receita](/pt/assessment.html). Se o acordo é claro mas o CRM não o consegue representar, faça a [verificação de preparação do CRM](/pt/readiness.html) antes de redesenhar o sistema.
 
 ## A automação vem depois do acordo
 

@@ -17,6 +17,7 @@ function metadata(relative, language) {
   const source = fs.readFileSync(file, 'utf8');
   return {
     title: source.match(/<title>([^<]+)<\/title>/i)?.[1]?.trim() || 'RevOpHubs',
+    modified: source.match(/<meta name="article-modified" content="([^"]+)"/i)?.[1] || lastmod,
     description: source.match(/<meta name="description" content="([^"]+)"/i)?.[1]?.trim() || ''
   };
 }
@@ -27,7 +28,7 @@ for (const relative of pages) {
     const url = `${site}${pathFor(relative, language)}`;
     const en = `${site}${pathFor(relative, 'en')}`;
     const pt = `${site}${pathFor(relative, 'pt')}`;
-    sitemapRows.push(`  <url><loc>${url}</loc><lastmod>${lastmod}</lastmod><xhtml:link rel="alternate" hreflang="en" href="${en}"/><xhtml:link rel="alternate" hreflang="pt-PT" href="${pt}"/><xhtml:link rel="alternate" hreflang="x-default" href="${en}"/></url>`);
+    sitemapRows.push(`  <url><loc>${url}</loc><lastmod>${metadata(relative, language).modified}</lastmod><xhtml:link rel="alternate" hreflang="en" href="${en}"/><xhtml:link rel="alternate" hreflang="pt-PT" href="${pt}"/><xhtml:link rel="alternate" hreflang="x-default" href="${en}"/></url>`);
   }
 }
 fs.writeFileSync(path.join(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${sitemapRows.join('\n')}\n</urlset>\n`);
@@ -66,13 +67,15 @@ for (const language of ['en', 'pt']) {
   fs.writeFileSync(path.join(root, isPt ? 'pt/llms-full.txt' : 'llms-full.txt'), `${lines.join('\n')}\n\n---\n\n${full}`);
 
   const feedEntries = articles.map((relative) => {
-    const { title, description } = metadata(relative, language);
+    const { title, description, modified } = metadata(relative, language);
     const url = `${site}${pathFor(relative, language)}`;
-    return `  <entry><title>${title.replaceAll('&', '&amp;')}</title><id>${url}</id><link href="${url}"/><updated>${lastmod}T00:00:00Z</updated><summary>${description.replaceAll('&', '&amp;')}</summary></entry>`;
+    return `  <entry><title>${title.replaceAll('&', '&amp;')}</title><id>${url}</id><link href="${url}"/><updated>${modified}T00:00:00Z</updated><summary>${description.replaceAll('&', '&amp;')}</summary></entry>`;
   }).join('\n');
+  const feedUpdated = articles.map(relative => metadata(relative, language).modified).sort().at(-1);
   const home = `${site}${isPt ? '/pt/' : '/'}`;
-  const feed = `<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="${isPt ? 'pt-PT' : 'en'}"><title>RevOpHubs</title><id>${home}</id><link href="${home}"/><link rel="self" href="${site}${isPt ? '/pt/feed.xml' : '/feed.xml'}"/><updated>${lastmod}T00:00:00Z</updated>\n${feedEntries}\n</feed>\n`;
+  const feed = `<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="${isPt ? 'pt-PT' : 'en'}"><title>RevOpHubs</title><id>${home}</id><link href="${home}"/><link rel="self" href="${site}${isPt ? '/pt/feed.xml' : '/feed.xml'}"/><updated>${feedUpdated}T00:00:00Z</updated>\n${feedEntries}\n</feed>\n`;
   fs.writeFileSync(path.join(root, isPt ? 'pt/feed.xml' : 'feed.xml'), feed);
 }
 
 console.log('Built sitemap, robots, headers, feeds and LLM indexes.');
+

@@ -244,6 +244,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -372,6 +373,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -462,6 +464,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 **SmartLinks**[About RevOpHubs](/about.html)<a href="https://www.smartlinks.pt/metodo/revenue-operations" rel="external">Revenue Operations</a><a href="https://www.smartlinks.pt/contactos" rel="external">Contact SmartLinks</a>
 
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
+
 
 
 ---
@@ -625,6 +628,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 **SmartLinks**[About RevOpHubs](/about.html)<a href="https://www.smartlinks.pt/metodo/revenue-operations" rel="external">Revenue Operations</a><a href="https://www.smartlinks.pt/contactos" rel="external">Contact SmartLinks</a>
 
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
+
 
 
 ---
@@ -812,6 +816,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 **SmartLinks**[About RevOpHubs](/about.html)<a href="https://www.smartlinks.pt/metodo/revenue-operations" rel="external">Revenue Operations</a><a href="https://www.smartlinks.pt/contactos" rel="external">Contact SmartLinks</a>
 
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
+
 
 
 ---
@@ -1079,6 +1084,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -1153,6 +1159,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 **SmartLinks**[About RevOpHubs](/about.html)<a href="https://www.smartlinks.pt/metodo/revenue-operations" rel="external">Revenue Operations</a><a href="https://www.smartlinks.pt/contactos" rel="external">Contact SmartLinks</a>
 
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
+
 
 
 ---
@@ -1247,6 +1254,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -1319,6 +1327,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 **SmartLinks**[About RevOpHubs](/about.html)<a href="https://www.smartlinks.pt/metodo/revenue-operations" rel="external">Revenue Operations</a><a href="https://www.smartlinks.pt/contactos" rel="external">Contact SmartLinks</a>
 
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
+
 
 
 ---
@@ -1453,6 +1462,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -1542,6 +1552,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -1610,6 +1621,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 **SmartLinks**[About RevOpHubs](/about.html)<a href="https://www.smartlinks.pt/metodo/revenue-operations" rel="external">Revenue Operations</a><a href="https://www.smartlinks.pt/contactos" rel="external">Contact SmartLinks</a>
 
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
+
 
 
 ---
@@ -1761,6 +1773,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -1861,6 +1874,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -1952,6 +1966,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -1975,7 +1990,7 @@ Process · 8 min read
 
 Most cross-functional loss is not dramatic. It appears as waiting, missing context, repeated work and decisions that nobody explicitly owns.
 
-RevOpHubs field guide · September 2026
+RevOpHubs field guide · Published September 2026 · Updated 1 October 2026
 
 Inside each function, the work may appear healthy. Marketing delivers leads. Sales accepts them. Customer success receives the signed customer. Yet the customer experiences one journey, not the organisation chart. Every transition between teams creates a moment where context, time and accountability can disappear.
 
@@ -2010,6 +2025,50 @@ For that transition, answer:
 - Who accepts the work, and within what response time?
 - What happens when the criteria are not met?
 - Which measure shows whether the hand-off improved?
+
+## What should a marketing-to-sales hand-off include?
+
+A marketing-to-sales hand-off should include a qualification trigger, the buyer's context, a named sales owner, a response deadline and an explicit acceptance or return decision. Changing a CRM owner alone does not confirm that sales can act.
+
+## A worked example: a buyer requests a demonstration
+
+**Illustrative example, not a client case or an industry benchmark.** A B2B buyer requests a demonstration after reading a product guide. Marketing records the source, but the sales team receives only a name and an email address. The salesperson must reconstruct the request before deciding what to do.
+
+The teams agree the following operating contract. The one-business-day deadline is a proposed starting point for this example; set your own target using coverage, buyer expectations and observed response times.
+
+- **Trigger:** a buyer requests a demonstration and the company meets the agreed account-fit criteria. A content download alone does not trigger this route.
+
+- **Required context:** company, contact details supplied by the buyer, request, product or use case of interest, source and relevant previous interactions. Record unknown information as unknown; do not invent budget or buying authority.
+
+- **Owner:** route the record to a named salesperson using the agreed territory or account rules. Keep a named queue owner for cases that cannot be assigned.
+
+- **Acceptance:** within one business day, the salesperson records either acceptance with a next action and due date, or return with a specific reason. Acceptance is a workflow decision; it does not automatically create a qualified opportunity.
+
+- **Exception:** return an incomplete record to a named marketing owner with the missing field and a due date. Escalate an overdue decision to the sales manager. Keep the buyer informed while the teams resolve the exception.
+
+The CRM needs to make that agreement visible: hand-off time, receiving owner, decision time, decision reason and next action. These can be properties, statuses or tasks in your existing CRM. Agree their meaning before configuring the workflow.
+
+## How do you measure whether a hand-off improved?
+
+Take a baseline from recent records, then compare the same transition after the change. Keep the segment, observation period and qualification rules consistent; a small sample can reveal failure patterns but does not establish a company-wide revenue impact.
+
+- **Acceptance rate:** accepted hand-offs divided by all hand-offs in the selected cohort. Report returned and still-pending records separately.
+
+- **Decision time:** elapsed time from the trigger to acceptance or return. Track the median and the oldest pending records. State whether you use business hours or calendar hours.
+
+- **Completeness rate:** records with every agreed required field present at hand-off divided by all hand-offs. Check accuracy separately; a filled field may still be wrong.
+
+- **Rework rate:** hand-offs requiring clarification or correction before work can start divided by all hand-offs. Use reason codes to identify the recurring causes.
+
+- **Commercial progression:** accepted hand-offs that reach the agreed next meaningful stage within a defined follow-up window divided by accepted hand-offs with that full observation window. Faster acceptance alone does not establish better conversion.
+
+## Run a two-week hand-off audit
+
+**Week one:** the marketing and sales process owners review a manageable sample of recent demonstration requests, including returned and pending records. Trace the trigger, context, owner, decision and next action. Identify one recurring failure and agree the contract above for that transition.
+
+**Week two:** pilot the contract, record exceptions and review the baseline measures together. The deliverable is a one-page hand-off agreement, an exception log and a decision on which stable rules to automate. Continue observing commercial progression beyond the pilot where the sales cycle requires it.
+
+For a broader diagnosis, use the [Revenue System Assessment](/assessment.html). If the agreement is clear but the CRM cannot represent it, work through the [CRM Readiness Check](/readiness.html) before redesigning the system.
 
 ## Automation comes after agreement
 
@@ -2136,6 +2195,7 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
 
 
+
 ---
 
 ---
@@ -2228,3 +2288,4 @@ Practical Revenue Operations knowledge and tools. A SmartLinks initiative.
 **SmartLinks**[About RevOpHubs](/about.html)<a href="https://www.smartlinks.pt/metodo/revenue-operations" rel="external">Revenue Operations</a><a href="https://www.smartlinks.pt/contactos" rel="external">Contact SmartLinks</a>
 
 RevOpHubs is maintained by SmartLinks.© 2026 SmartLinks
+

@@ -69,7 +69,7 @@ for (const [relative, config] of Object.entries(pages)) {
   const website = { '@type': 'WebSite', '@id': `${site}/#website-${isPortuguese ? 'pt' : 'en'}`, url: `${site}${isPortuguese ? '/pt/' : '/'}`, name: 'RevOpHubs', publisher: { '@id': `${site}/#organization` }, creator: { '@id': smartlinks['@id'] }, maintainer: { '@id': smartlinks['@id'] }, inLanguage: config.lang };
   const graph = [smartlinks, organisation, website, breadcrumbs(config, title, canonical)];
   const pageNode = { '@type': config.type, '@id': `${canonical}#page`, url: canonical, name: title, description, isPartOf: { '@id': website['@id'] }, publisher: { '@id': `${site}/#organization` }, inLanguage: config.lang, breadcrumb: { '@id': `${canonical}#breadcrumb` } };
-  if (config.type === 'Article' || config.type === 'TechArticle') Object.assign(pageNode, { headline: title.replace(/ — RevOpHubs$/, ''), datePublished: '2026-09-20', dateModified: '2026-09-20', author: { '@id': `${site}/#organization` }, mainEntityOfPage: canonical, articleSection: config.section, keywords: config.keywords || config.about });
+  if (config.type === 'Article' || config.type === 'TechArticle') Object.assign(pageNode, { headline: title.replace(/ — RevOpHubs$/, ''), datePublished: '2026-09-20', dateModified: extract(html, /<meta name="article-modified" content="([^"]+)"/i, '2026-09-20'), author: { '@id': `${site}/#organization` }, mainEntityOfPage: canonical, articleSection: config.section, keywords: config.keywords || config.about });
   if (config.type === 'WebApplication') Object.assign(pageNode, { applicationCategory: 'BusinessApplication', operatingSystem: 'Web', isAccessibleForFree: true, offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' }, featureList: config.featureList });
   if (config.items) pageNode.mainEntity = { '@type': 'ItemList', itemListElement: config.items.map((item, index) => ({ '@type': 'ListItem', position: index + 1, url: `${site}${item}` })) };
   if (config.about) pageNode.about = config.about.map(name => ({ '@type': 'Thing', name }));
@@ -85,3 +85,4 @@ for (const [relative, config] of Object.entries(pages)) {
 }
 
 console.log(`Enriched ${Object.keys(pages).length} pages.`);
+

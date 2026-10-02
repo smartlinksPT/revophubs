@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve('dist');
-const beehiivFormId = '548553ad-b90f-486a-af21-d44dfafc7eb1';
+const beehiivFormId = '7d6aec8a-727f-49ae-917c-dd1a49e35631';
 const linkedinNewsletter = 'https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7402293277217132544';
 
 function filesByExtension(dir, extensions, skipMarkdown = false) {

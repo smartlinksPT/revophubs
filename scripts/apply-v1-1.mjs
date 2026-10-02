@@ -49,7 +49,7 @@ function newsletter(pt, article = false) {
   const tag = article ? 'div' : 'aside';
   const cls = article ? 'article-newsletter' : 'brief-card';
   const aria = article ? '' : ' aria-label="' + (pt ? 'Newsletter Revenue Systems Brief' : 'Revenue Systems Brief newsletter') + '"';
-  return '<' + tag + ' class="' + cls + '"' + aria + '><p class="card-kicker">Revenue Systems Brief</p><h2>' + title + '</h2><p>' + copy + '</p><div class="beehiiv-embed"><script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script><script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="' + beehiivFormId + '"></script></div><p class="newsletter-note">' + note + ' <a href="' + linkedinNewsletter + '" target="_blank" rel="noopener">' + linked + '</a></p></' + tag + '>';
+  return '<' + tag + ' class="' + cls + '"' + aria + '><p class="card-kicker">Revenue Systems Brief</p><h2>' + title + '</h2><p>' + copy + '</p><div class="beehiiv-embed"><iframe class="beehiiv-frame" title="' + (pt ? 'Subscrever a Revenue Systems Brief' : 'Subscribe to Revenue Systems Brief') + '" src="https://embeds.beehiiv.com/' + beehiivFormId + '" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" loading="lazy"></iframe></div><p class="newsletter-note">' + note + ' <a href="' + linkedinNewsletter + '" target="_blank" rel="noopener">' + linked + '</a></p></' + tag + '>';
 }
 
 function homeHubs(pt) {

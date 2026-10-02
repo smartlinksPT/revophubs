@@ -42,7 +42,7 @@ for (const file of htmlFiles) {
 const homeSource = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const ptHomeSource = fs.readFileSync(path.join(root, 'pt/index.html'), 'utf8');
 for (const [label, source] of [['index.html', homeSource], ['pt/index.html', ptHomeSource]]) {
-  if (!source.includes('data-beehiiv-form="7d6aec8a-727f-49ae-917c-dd1a49e35631"')) errors.push(`${label}: Beehiiv form missing`);
+  if (!source.includes('src="https://embeds.beehiiv.com/7d6aec8a-727f-49ae-917c-dd1a49e35631"')) errors.push(`${label}: Beehiiv form missing`);
   if (!source.includes('/research.html') && label === 'index.html') errors.push(`${label}: Research missing from navigation`);
   if (!source.includes('/pt/research.html') && label === 'pt/index.html') errors.push(`${label}: Investigação missing from navigation`);
 }

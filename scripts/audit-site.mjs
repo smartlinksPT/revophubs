@@ -20,6 +20,7 @@ for (const file of htmlFiles) {
   const relative = path.relative(root, file);
   const source = fs.readFileSync(file, 'utf8');
   for (const expression of required) if (!expression.test(source)) errors.push(`${relative}: missing ${expression}`);
+  if (source.includes('RevOpHubs')) errors.push(`${relative}: old brand RevOpHubs remains`);
   const h1Count = (source.match(/<h1[\s>]/gi) || []).length;
   if (h1Count !== 1) errors.push(`${relative}: expected one h1, found ${h1Count}`);
   const canonical = source.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
@@ -36,6 +37,14 @@ for (const file of htmlFiles) {
     const local = path.join(root, href.replace(/^\//, '').replace(/\/$/, '/index.html'));
     if (!fs.existsSync(local)) errors.push(`${relative}: broken internal link ${href}`);
   }
+}
+
+const homeSource = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const ptHomeSource = fs.readFileSync(path.join(root, 'pt/index.html'), 'utf8');
+for (const [label, source] of [['index.html', homeSource], ['pt/index.html', ptHomeSource]]) {
+  if (!source.includes('data-beehiiv-form="548553ad-b90f-486a-af21-d44dfafc7eb1"')) errors.push(`${label}: Beehiiv form missing`);
+  if (!source.includes('/research.html') && label === 'index.html') errors.push(`${label}: Research missing from navigation`);
+  if (!source.includes('/pt/research.html') && label === 'pt/index.html') errors.push(`${label}: Investigação missing from navigation`);
 }
 
 const allText = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');

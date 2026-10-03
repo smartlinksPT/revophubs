@@ -1,6 +1,6 @@
-# RevOpHubs
+# RevOpsHubs
 
-RevOpHubs is a SmartLinks initiative for practical Revenue Operations knowledge, research and tools.
+RevOpsHubs is an independent research and education initiative by SmartLinks for practical Revenue Operations knowledge, research and tools.
 
 The website is bilingual (English and Portuguese) and includes RevOps fundamentals, AI-Powered RevOps, practical tools, assessments and implementation guidance.
 

@@ -14,6 +14,14 @@ function readIfExists(file) {
 
 function routeReplacements(text) {
   let out = text;
+  const sharedPairs = [
+    [`${site}/pt/learn.html`, `${site}/pt/learn/`],
+    [`${site}/learn.html`, `${site}/learn/`],
+    ['/pt/learn.html', '/pt/learn/'],
+    ['/learn.html', '/learn/']
+  ];
+  for (const [from, to] of sharedPairs) out = out.replaceAll(from, to);
+
   for (const route of legacyArticleRoutes) {
     // Replace the more specific Portuguese paths first because /articles/... is
     // also a substring of /pt/articles/....
@@ -39,6 +47,11 @@ function moveTextFile(sourceRelative, destinationRelative, transform = value => 
   fs.writeFileSync(destination, transform(sourceText));
   fs.unlinkSync(source);
 }
+
+// Learn is the canonical editorial hub, so its collection page uses the same
+// clean directory convention as the articles beneath it.
+moveTextFile('learn.html', 'learn/index.html', routeReplacements);
+moveTextFile('pt/learn.html', 'pt/learn/index.html', routeReplacements);
 
 for (const route of legacyArticleRoutes) {
   moveTextFile(route.legacyEnFile, route.enFile, routeReplacements);
@@ -68,7 +81,15 @@ for (const file of walk(root)) {
   if (updated !== source) fs.writeFileSync(file, updated);
 }
 
-const redirects = ['# Legacy article URLs → Learn routes'];
+const redirects = [
+  '# Legacy Learn URLs → canonical Learn routes',
+  '/learn.html /learn/ 301',
+  '/learn /learn/ 301',
+  '/pt/learn.html /pt/learn/ 301',
+  '/pt/learn /pt/learn/ 301',
+  '',
+  '# Legacy article URLs → Learn routes'
+];
 for (const route of legacyArticleRoutes) {
   for (const [oldPath, newPath] of [[route.legacyEnPath, route.enPath],[route.legacyPtPath, route.ptPath]]) {
     const withoutHtml = oldPath.replace(/\.html$/, '');
@@ -79,4 +100,4 @@ for (const route of legacyArticleRoutes) {
 }
 fs.writeFileSync(path.join(root, '_redirects'), `${redirects.join('\n')}\n`);
 
-console.log(`Migrated ${legacyArticleRoutes.length * 2} localized article routes into /learn/.`);
+console.log(`Migrated Learn and ${legacyArticleRoutes.length * 2} localized article routes into /learn/.`);

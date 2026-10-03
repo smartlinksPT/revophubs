@@ -5,8 +5,8 @@ import { site, pagePairs, articlePairs } from './content-routes.mjs';
 const root = path.resolve('dist');
 
 const sectionPaths = {
-  en: { Learn:'/learn.html', Hubs:'/hubs.html', Fundamentals:'/fundamentals.html', Tools:'/tools.html', Research:'/research.html', Methodology:'/model.html' },
-  pt: { Aprender:'/pt/learn.html', Hubs:'/pt/hubs.html', Fundamentos:'/pt/fundamentals.html', Ferramentas:'/pt/tools.html', Investigação:'/pt/research.html', Metodologia:'/pt/model.html' }
+  en: { Learn:'/learn/', Hubs:'/hubs.html', Fundamentals:'/fundamentals.html', Tools:'/tools.html', Research:'/research.html', Methodology:'/model.html' },
+  pt: { Aprender:'/pt/learn/', Hubs:'/pt/hubs.html', Fundamentos:'/pt/fundamentals.html', Ferramentas:'/pt/tools.html', Investigação:'/pt/research.html', Metodologia:'/pt/model.html' }
 };
 
 const aboutById = {
@@ -58,7 +58,6 @@ for (const pair of pagePairs) {
     const routePath = isPt ? pair.ptPath : pair.enPath;
     const markdown = isPt ? pair.ptMarkdown : pair.enMarkdown;
     const section = isPt ? pair.sectionPt : pair.sectionEn;
-    const counterpart = isPt ? pair.enPath : pair.ptPath;
     const file = path.join(root, relative);
     let html = fs.readFileSync(file, 'utf8');
 

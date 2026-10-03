@@ -22,6 +22,7 @@ for (const file of htmlFiles) {
   const source = fs.readFileSync(file, 'utf8');
   for (const expression of required) if (!expression.test(source)) errors.push(`${relative}: missing ${expression}`);
   if (source.includes('RevOpHubs')) errors.push(`${relative}: old brand RevOpHubs remains`);
+  if (source.includes('href="/learn.html"') || source.includes('href="/pt/learn.html"')) errors.push(`${relative}: legacy Learn URL remains`);
   if (relative.startsWith('articles/') || relative.startsWith('pt/articles/')) errors.push(`${relative}: editorial content must live under /learn/`);
   const h1Count = (source.match(/<h1[\s>]/gi) || []).length;
   if (h1Count !== 1) errors.push(`${relative}: expected one h1, found ${h1Count}`);
@@ -68,11 +69,15 @@ const redirectFile = path.join(root, '_redirects');
 if (!fs.existsSync(redirectFile)) errors.push('missing _redirects');
 else {
   const redirects = fs.readFileSync(redirectFile, 'utf8');
+  for (const expected of ['/learn.html /learn/ 301','/pt/learn.html /pt/learn/ 301']) if (!redirects.includes(expected)) errors.push(`_redirects: missing ${expected}`);
   for (const route of legacyArticleRoutes) {
     if (!redirects.includes(`${route.legacyEnPath} ${route.enPath} 301`)) errors.push(`_redirects: missing ${route.legacyEnPath}`);
     if (!redirects.includes(`${route.legacyPtPath} ${route.ptPath} 301`)) errors.push(`_redirects: missing ${route.legacyPtPath}`);
   }
 }
+
+const assetsIgnore = fs.readFileSync(path.join(root, '.assetsignore'), 'utf8');
+if (assetsIgnore.split(/\r?\n/).some(line => line.trim() === '_headers')) errors.push('.assetsignore must not exclude _headers');
 
 const allText = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const sitemapCount = (allText.match(/<url>/g) || []).length;
@@ -96,4 +101,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log(`Audit passed: ${htmlFiles.length} HTML pages, ${canonicals.size} unique canonicals, ${sitemapCount} sitemap URLs, Learn routes validated.`);
+console.log(`Audit passed: ${htmlFiles.length} HTML pages, ${canonicals.size} unique canonicals, ${sitemapCount} sitemap URLs, clean Learn routes validated.`);

@@ -15,13 +15,15 @@ function readIfExists(file) {
 function routeReplacements(text) {
   let out = text;
   for (const route of legacyArticleRoutes) {
+    // Replace the more specific Portuguese paths first because /articles/... is
+    // also a substring of /pt/articles/....
     const pairs = [
-      [route.legacyEnPath, route.enPath],
-      [route.legacyPtPath, route.ptPath],
-      [route.legacyEnMarkdown, route.enMarkdown],
-      [route.legacyPtMarkdown, route.ptMarkdown],
+      [`${site}${route.legacyPtPath}`, `${site}${route.ptPath}`],
       [`${site}${route.legacyEnPath}`, `${site}${route.enPath}`],
-      [`${site}${route.legacyPtPath}`, `${site}${route.ptPath}`]
+      [route.legacyPtMarkdown, route.ptMarkdown],
+      [route.legacyEnMarkdown, route.enMarkdown],
+      [route.legacyPtPath, route.ptPath],
+      [route.legacyEnPath, route.enPath]
     ];
     for (const [from, to] of pairs) out = out.replaceAll(from, to);
   }

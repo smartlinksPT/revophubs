@@ -11,6 +11,11 @@ Editorial content lives under **Learn**.
 - Portuguese is the original editorial version; English is a localized edition for an international B2B audience.
 - Legacy `/articles/...` URLs are kept only as permanent redirects to the corresponding Learn route.
 
+Examples:
+
+- `/learn/what-is-a-revenue-system/`
+- `/pt/learn/o-que-e-um-revenue-system/`
+
 ## Build
 
 Cloudflare builds the site with `npm run build` and deploys `dist/` as static assets.

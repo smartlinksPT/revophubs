@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { site, pagePairs, legacyArticleRoutes } from './content-routes.mjs';
 
 const root = path.resolve('dist');
 const htmlFiles = [];
@@ -17,10 +18,11 @@ const canonicals = new Set();
 const required = [/<title>[^<]+<\/title>/i, /<meta name="description" content="[^"]+"/i, /<meta name="robots"/i, /<link rel="canonical" href="https:\/\/revophubs\.com\//i, /hreflang="en"/i, /hreflang="pt-PT"/i, /type="text\/markdown"/i, /type="application\/ld\+json"/i];
 
 for (const file of htmlFiles) {
-  const relative = path.relative(root, file);
+  const relative = path.relative(root, file).replaceAll('\\','/');
   const source = fs.readFileSync(file, 'utf8');
   for (const expression of required) if (!expression.test(source)) errors.push(`${relative}: missing ${expression}`);
   if (source.includes('RevOpHubs')) errors.push(`${relative}: old brand RevOpHubs remains`);
+  if (relative.startsWith('articles/') || relative.startsWith('pt/articles/')) errors.push(`${relative}: editorial content must live under /learn/`);
   const h1Count = (source.match(/<h1[\s>]/gi) || []).length;
   if (h1Count !== 1) errors.push(`${relative}: expected one h1, found ${h1Count}`);
   const canonical = source.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
@@ -39,18 +41,43 @@ for (const file of htmlFiles) {
   }
 }
 
+for (const pair of pagePairs) {
+  for (const language of ['en','pt']) {
+    const relative = language === 'pt' ? pair.ptFile : pair.enFile;
+    const routePath = language === 'pt' ? pair.ptPath : pair.enPath;
+    const file = path.join(root, relative);
+    if (!fs.existsSync(file)) {
+      errors.push(`${relative}: expected routed page missing`);
+      continue;
+    }
+    const source = fs.readFileSync(file, 'utf8');
+    const expectedCanonical = `${site}${routePath}`;
+    if (!source.includes(`<link rel="canonical" href="${expectedCanonical}">`)) errors.push(`${relative}: canonical should be ${expectedCanonical}`);
+  }
+}
+
 const homeSource = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const ptHomeSource = fs.readFileSync(path.join(root, 'pt/index.html'), 'utf8');
 for (const [label, source] of [['index.html', homeSource], ['pt/index.html', ptHomeSource]]) {
-  if (!source.includes('src="https://embeds.beehiiv.com/7d6aec8a-727f-49ae-917c-dd1a49e35631"')) errors.push(`${label}: Beehiiv form missing`);
+  if (!source.includes('href="https://revops-hubs.beehiiv.com/?modal=signup"')) errors.push(`${label}: hosted Beehiiv signup CTA missing`);
   if (!source.includes('/research.html') && label === 'index.html') errors.push(`${label}: Research missing from navigation`);
   if (!source.includes('/pt/research.html') && label === 'pt/index.html') errors.push(`${label}: Investigação missing from navigation`);
+}
+
+const redirectFile = path.join(root, '_redirects');
+if (!fs.existsSync(redirectFile)) errors.push('missing _redirects');
+else {
+  const redirects = fs.readFileSync(redirectFile, 'utf8');
+  for (const route of legacyArticleRoutes) {
+    if (!redirects.includes(`${route.legacyEnPath} ${route.enPath} 301`)) errors.push(`_redirects: missing ${route.legacyEnPath}`);
+    if (!redirects.includes(`${route.legacyPtPath} ${route.ptPath} 301`)) errors.push(`_redirects: missing ${route.legacyPtPath}`);
+  }
 }
 
 const allText = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const sitemapCount = (allText.match(/<url>/g) || []).length;
 if (sitemapCount !== htmlFiles.length) errors.push(`sitemap.xml: expected ${htmlFiles.length} URLs, found ${sitemapCount}`);
-for (const requiredFile of ['robots.txt', 'sitemap.xml', 'llms.txt', 'llms-full.txt', 'feed.xml', '_headers', 'pt/llms.txt', 'pt/llms-full.txt', 'pt/feed.xml']) {
+for (const requiredFile of ['robots.txt', 'sitemap.xml', 'llms.txt', 'llms-full.txt', 'feed.xml', '_headers', '_redirects', 'pt/llms.txt', 'pt/llms-full.txt', 'pt/feed.xml']) {
   if (!fs.existsSync(path.join(root, requiredFile))) errors.push(`missing ${requiredFile}`);
 }
 
@@ -69,4 +96,4 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
 }
-console.log(`Audit passed: ${htmlFiles.length} HTML pages, ${canonicals.size} unique canonicals, ${sitemapCount} sitemap URLs.`);
+console.log(`Audit passed: ${htmlFiles.length} HTML pages, ${canonicals.size} unique canonicals, ${sitemapCount} sitemap URLs, Learn routes validated.`);

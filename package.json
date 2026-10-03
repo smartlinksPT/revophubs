@@ -2,8 +2,8 @@
   "name": "revophubs",
   "version": "1.0.0",
   "private": true,
-  "description": "RevOpsHubs — an independent research and education initiative by SmartLinks for practical Revenue Operations knowledge, research and tools.",
+  "description": "RevOpsHubs — a SmartLinks research and education initiative for practical Revenue Operations knowledge, research and tools.",
   "scripts": {
-    "build": "node scripts/apply-v1-1.mjs && node scripts/use-hosted-newsletter.mjs && node scripts/enrich-seo.mjs && node scripts/build-discovery.mjs && node scripts/audit-site.mjs"
+    "build": "node scripts/apply-v1-1.mjs && node scripts/migrate-learn-routes.mjs && node scripts/use-hosted-newsletter.mjs && node scripts/enrich-seo.mjs && node scripts/build-discovery.mjs && node scripts/audit-site.mjs"
   }
 }

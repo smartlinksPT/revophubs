@@ -1,25 +1,26 @@
 # RevOpsHubs
 
-RevOpsHubs is an independent research and education initiative by SmartLinks for practical Revenue Operations knowledge, research and tools.
+RevOpsHubs is a SmartLinks initiative for practical Revenue Operations knowledge, research and tools.
 
-The website is bilingual (English and Portuguese) and includes RevOps fundamentals, AI-Powered RevOps, practical tools, assessments and implementation guidance.
+## Editorial URLs
 
-## Cloudflare Pages
+Editorial content lives under **Learn**.
 
-Use these settings when connecting this repository to Cloudflare Pages:
+- English hub: `/learn/`
+- Portuguese hub: `/pt/learn/`
+- English articles: `/learn/<english-slug>/`
+- Portuguese articles: `/pt/learn/<slug-localizado>/`
+- Portuguese is the original editorial version; English is localized for an international B2B audience.
+- Legacy `/learn.html` and `/articles/...` URLs permanently redirect to the corresponding Learn routes.
 
-- Production branch: `main`
-- Framework preset: `None`
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Root directory: leave blank (repository root)
+Examples: `/learn/what-is-a-revenue-system/` and `/pt/learn/o-que-e-um-revenue-system/`.
 
-The intended production domain is [revophubs.com](https://revophubs.com).
+## Editorial rule
 
-## Local validation
+Before adding a new article, check it against existing Learn content to avoid topic and search-intent overlap. Prefer improving an existing piece when the intended query or reader decision is substantially the same.
 
-```sh
-npm run build
-```
+Portuguese is written as the editorial source, with natural PT-PT language and only necessary industry terms left in English. English is then localized for an international B2B audience rather than translated literally.
 
-The build enriches page metadata, regenerates discovery files and audits all published pages.
+## Build
+
+Cloudflare builds with `npm run build` and deploys `dist/` as static assets.

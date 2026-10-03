@@ -2,7 +2,7 @@ export const site = 'https://revophubs.com';
 
 const staticDefs = [
   ['home','index.html','/','pt/index.html','/pt/','WebPage','Home','Início','/markdown/index.md','/pt/markdown/index.md'],
-  ['learn','learn.html','/learn.html','pt/learn.html','/pt/learn.html','CollectionPage','Learn','Aprender','/markdown/learn.md','/pt/markdown/learn.md'],
+  ['learn','learn/index.html','/learn/','pt/learn/index.html','/pt/learn/','CollectionPage','Learn','Aprender','/markdown/learn.md','/pt/markdown/learn.md'],
   ['hubs','hubs.html','/hubs.html','pt/hubs.html','/pt/hubs.html','CollectionPage','Hubs','Hubs','/markdown/hubs.md','/pt/markdown/hubs.md'],
   ['fundamentals','fundamentals.html','/fundamentals.html','pt/fundamentals.html','/pt/fundamentals.html','CollectionPage','Fundamentals','Fundamentos','/markdown/fundamentals.md','/pt/markdown/fundamentals.md'],
   ['ai-revops','ai-revops.html','/ai-revops.html','pt/ai-revops.html','/pt/ai-revops.html','TechArticle','Hubs','Hubs','/markdown/ai-revops.md','/pt/markdown/ai-revops.md'],
@@ -26,7 +26,7 @@ export const articlePairs = [
     id:'revenue-system', legacyFile:'revops-operating-system.html',
     enFile:'learn/what-is-a-revenue-system/index.html', enPath:'/learn/what-is-a-revenue-system/', enMarkdown:'/markdown/learn/what-is-a-revenue-system.md',
     ptFile:'pt/learn/o-que-e-um-revenue-system/index.html', ptPath:'/pt/learn/o-que-e-um-revenue-system/', ptMarkdown:'/pt/markdown/learn/o-que-e-um-revenue-system.md',
-    keywords:['Revenue Operations','Revenue System','RevOps operating system','AI-ready RevOps']
+    keywords:['Revenue System','B2B revenue system','Revenue System Model','AI-ready revenue system']
   },
   {
     id:'pipeline-system-problem', legacyFile:'pipeline-system-problem.html',

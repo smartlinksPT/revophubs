@@ -1,25 +1,16 @@
 # RevOpsHubs
 
-RevOpsHubs is an independent research and education initiative by SmartLinks for practical Revenue Operations knowledge, research and tools.
+RevOpsHubs is a SmartLinks initiative for practical Revenue Operations knowledge, research and tools.
 
-The website is bilingual (English and Portuguese) and includes RevOps fundamentals, AI-Powered RevOps, practical tools, assessments and implementation guidance.
+## Editorial URL convention
 
-## Cloudflare Pages
+Editorial content lives under **Learn**.
 
-Use these settings when connecting this repository to Cloudflare Pages:
+- English: `/learn/<english-slug>/`
+- Portuguese: `/pt/learn/<slug-localizado>/`
+- Portuguese is the original editorial version; English is a localized edition for an international B2B audience.
+- Legacy `/articles/...` URLs are kept only as permanent redirects to the corresponding Learn route.
 
-- Production branch: `main`
-- Framework preset: `None`
-- Build command: `npm run build`
-- Build output directory: `dist`
-- Root directory: leave blank (repository root)
+## Build
 
-The intended production domain is [revophubs.com](https://revophubs.com).
-
-## Local validation
-
-```sh
-npm run build
-```
-
-The build enriches page metadata, regenerates discovery files and audits all published pages.
+Cloudflare builds the site with `npm run build` and deploys `dist/` as static assets.

@@ -1,4 +1,4 @@
-/* Text-link visibility: keep editorial hyperlinks visually distinct from body copy. */
+/* Text-link visibility: keep editorial and tool hyperlinks visually distinct from body copy. */
 .article-body a:not(.button):not(.button-secondary),
 .article-aside a,
 .source-note a,
@@ -6,7 +6,11 @@
 .content-section p a,
 .content-section li a,
 .result-plan a,
-.result-resources a {
+.result-resources a,
+.agent-aside a,
+.agent-tool a:not(.button):not(.button-secondary),
+.tool-card>a,
+.text-link {
   color:#5300EF;
   text-decoration:underline;
   text-decoration-thickness:1px;
@@ -20,7 +24,11 @@
 .content-section p a:hover,
 .content-section li a:hover,
 .result-plan a:hover,
-.result-resources a:hover {
+.result-resources a:hover,
+.agent-aside a:hover,
+.agent-tool a:not(.button):not(.button-secondary):hover,
+.tool-card>a:hover,
+.text-link:hover {
   color:#4300C5;
   text-decoration-thickness:2px;
 }
@@ -30,7 +38,11 @@
 .source-note a:focus-visible,
 .references a:focus-visible,
 .content-section p a:focus-visible,
-.content-section li a:focus-visible {
+.content-section li a:focus-visible,
+.agent-aside a:focus-visible,
+.agent-tool a:focus-visible,
+.tool-card>a:focus-visible,
+.text-link:focus-visible {
   outline:2px solid #5300EF;
   outline-offset:3px;
 }

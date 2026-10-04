@@ -51,6 +51,18 @@ export const articlePairs = [
     enFile:'learn/ai-ready-revenue-system/index.html', enPath:'/learn/ai-ready-revenue-system/', enMarkdown:'/markdown/learn/ai-ready-revenue-system.md',
     ptFile:'pt/learn/sistema-de-receita-preparado-para-ia/index.html', ptPath:'/pt/learn/sistema-de-receita-preparado-para-ia/', ptMarkdown:'/pt/markdown/learn/sistema-de-receita-preparado-para-ia.md',
     keywords:['AI readiness','Revenue Operations AI','AI governance']
+  },
+  {
+    id:'crm-vs-process', legacyFile:'crm-vs-process.html',
+    enFile:'learn/crm-problem-or-process-problem/index.html', enPath:'/learn/crm-problem-or-process-problem/', enMarkdown:'/markdown/learn/crm-problem-or-process-problem.md',
+    ptFile:'pt/learn/crm-ou-processo/index.html', ptPath:'/pt/learn/crm-ou-processo/', ptMarkdown:'/pt/markdown/learn/crm-ou-processo.md',
+    keywords:['CRM problems','sales process CRM','CRM implementation','Revenue Operations diagnosis']
+  },
+  {
+    id:'hubspot-lifecycle', legacyFile:'lifecycle-stage-lead-status-deal-stage.html',
+    enFile:'learn/lifecycle-stage-vs-lead-status-vs-deal-stage/index.html', enPath:'/learn/lifecycle-stage-vs-lead-status-vs-deal-stage/', enMarkdown:'/markdown/learn/lifecycle-stage-vs-lead-status-vs-deal-stage.md',
+    ptFile:'pt/learn/lifecycle-stage-lead-status-deal-stage/index.html', ptPath:'/pt/learn/lifecycle-stage-lead-status-deal-stage/', ptMarkdown:'/pt/markdown/learn/lifecycle-stage-lead-status-deal-stage.md',
+    keywords:['HubSpot lifecycle stage','HubSpot lead status','HubSpot deal stage','HubSpot lifecycle stages']
   }
 ];
 

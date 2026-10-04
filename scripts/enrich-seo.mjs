@@ -19,7 +19,11 @@ const aboutById = {
 
 const featuresById = {
   assessment:['Six-layer revenue-system score','Weakest-layer diagnosis','Personalised 30-day action plan','Recommended resources'],
-  readiness:['Nine-point CRM readiness checklist','Readiness score','Action recommendation']
+  readiness:['Nine-point CRM readiness checklist','Readiness score','Action recommendation'],
+  'semantic-debt-audit':['Five-dimension semantic-debt score','Weakest-dimension diagnosis','Prioritised remediation actions','Printable result'],
+  'agent-context-readiness':['Seven-layer agent-context score','Ready, Constrained or Unsafe classification','Weakest-context diagnosis','Use-case-specific guidance'],
+  'workflow-agent-decision':['Decision uncertainty score','Action impact score','Workflow or agent recommendation','Human-approval guidance'],
+  'agent-operating-contract-builder':['Ten-part agent operating contract','Autonomy tier definition','Copyable contract output','Printable contract']
 };
 
 function itemsFor(pair, language) {
@@ -30,7 +34,9 @@ function itemsFor(pair, language) {
     ? ['/pt/model.html#strategy','/pt/model.html#process','/pt/model.html#crm','/pt/model.html#data','/pt/model.html#automation','/pt/ai-revops.html']
     : ['/model.html#strategy','/model.html#process','/model.html#crm','/model.html#data','/model.html#automation','/ai-revops.html'];
   if (pair.id === 'fundamentals') return [pick(article('what-is-revops')),pick(article('revenue-system')),language === 'pt' ? '/pt/model.html' : '/model.html',language === 'pt' ? '/pt/assessment.html' : '/assessment.html'];
-  if (pair.id === 'tools') return language === 'pt' ? ['/pt/assessment.html','/pt/model.html','/pt/readiness.html','/pt/ai-tools.html'] : ['/assessment.html','/model.html','/readiness.html','/ai-tools.html'];
+  if (pair.id === 'tools') return language === 'pt'
+    ? ['/pt/assessment.html','/pt/model.html','/pt/readiness.html','/pt/ai-tools.html','/pt/tools/semantic-debt-audit/','/pt/tools/preparacao-contexto-agentes/','/pt/tools/workflow-ou-agente/','/pt/tools/contrato-operacional-agente/']
+    : ['/assessment.html','/model.html','/readiness.html','/ai-tools.html','/tools/semantic-debt-audit/','/tools/agent-context-readiness/','/tools/workflow-vs-agent-decision/','/tools/agent-operating-contract-builder/'];
   return null;
 }
 

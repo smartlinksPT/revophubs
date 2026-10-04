@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRM problem or process problem? How to diagnose it — RevOpsHubs</title>
+<meta name="description" content="A practical diagnostic to tell whether a commercial problem comes from CRM configuration, process, data or adoption before rebuilding the system.">
+<link rel="canonical" href="https://revophubs.com/articles/crm-vs-process.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/content.css"></head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="RevOpsHubs home"><span>RevOps</span><strong>Hubs</strong></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/learn.html" aria-current="page">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a><a href="/model.html">Methodology</a></nav><a class="language-switch" href="/pt/articles/crm-vs-process.html" lang="pt-PT" hreflang="pt-PT" aria-label="View in Portuguese">PT</a><a class="button button-small header-cta" href="/assessment.html">Assess your Revenue System</a></div></header>
+<main id="main"><div class="shell article-layout"><article><header class="article-head"><p class="tag">CRM · Process · 9 min read</p><h1>Is this a CRM problem or a process problem?</h1><p class="article-deck">When someone says “the CRM is broken”, the fastest response is often to change fields, stages or workflows. That is also how teams end up configuring around a problem they have not diagnosed.</p><p class="article-byline">RevOpsHubs field guide · October 2026</p></header><div class="article-body">
+<p>There is a sentence that shows up in almost every CRM project: <strong>“this does not work in HubSpot.”</strong> Or Salesforce. Or Dynamics.</p>
+<p>Sometimes the platform really is the issue. A workflow fails, the data model is wrong or an integration is not doing what it should.</p>
+<p>But just as often the CRM is exposing a problem that existed before the configuration: unclear qualification, inconsistent stage criteria, a hand-off nobody owns, or a sales rule that changes depending on who you ask.</p>
+<div class="article-cta"><h3>RevOpsHubs Thesis</h3><p><strong>Diagnose the failing layer before you redesign the CRM.</strong> Fixing configuration when the real issue is process creates a cleaner version of the same ambiguity.</p></div>
+
+<h2 id="four-places">Four places the problem can actually live</h2>
+<h3>1. Process</h3><p>The organisation has not made the operating decision yet. Who qualifies? When is an opportunity created? What evidence moves a deal forward? Who accepts a Marketing-to-Sales hand-off?</p>
+<h3>2. CRM representation</h3><p>The process is understood, but the CRM expresses it badly. Stages do not match reality, required information is missing, fields overlap or automation forces users into workarounds.</p>
+<h3>3. Data</h3><p>The process and configuration may both be sound, but the information is late, incomplete or contradictory. A bad report may be a data problem rather than a reporting problem.</p>
+<h3>4. Adoption</h3><p>The system is usable and the required context exists, but people do not use it consistently. Even here, avoid jumping straight to training: as we argue in <a href="/articles/crm-adoption-design.html">CRM adoption is an operating-design issue</a>, users often avoid a system that creates work without helping them do the job.</p>
+
+<h2 id="diagnostic">A simple diagnostic before changing the CRM</h2>
+<p>Take one real record where the issue happened. Then ask, in order:</p>
+<ol><li><strong>Is the rule clear?</strong> Can different people explain the same entry and exit criteria?</li><li><strong>Does the CRM represent the rule?</strong> Do stages, properties and validation reflect the intended process?</li><li><strong>Is the evidence trustworthy?</strong> Can the record show whether the criteria were met?</li><li><strong>Do people follow the rule?</strong> Or does the real process happen in spreadsheets, messages and memory?</li></ol>
+<p>The first point where the answer changes from “yes” to “no” is usually where the intervention should start.</p>
+<blockquote>Do not begin with “what should we change in the CRM?”. Begin with “what was the first decision that stopped happening as intended?”.</blockquote>
+
+<h2 id="example">Example: “Marketing sends bad leads”</h2>
+<p>A common reaction is to add form fields, change scoring or automate more aggressively.</p>
+<p>Before doing that, check whether Marketing and Sales use the same qualification definition, whether the hand-off has explicit entry criteria, and whether Sales records why leads are rejected.</p>
+<p>If those decisions are missing, the CRM cannot invent them. This is exactly the kind of failure that appears at <a href="/articles/revenue-handoffs.html">revenue hand-offs</a>.</p>
+
+<h2 id="evidence">Technology should express the process, not substitute for it</h2>
+<p>HubSpot describes pipelines as a way to visualise processes through stages. Microsoft Dynamics 365 describes a sales process as a repeatable set of steps sellers follow through a sale.</p>
+<div class="source-note"><strong>Evidence</strong><br>The platforms themselves treat CRM stages as representations of a process. The commercial rules behind that process still have to be defined by the organisation.</div>
+
+<h2 id="ai">AI makes the distinction more important</h2>
+<p>A human can often compensate for an unclear rule by asking a colleague, reading between the lines or remembering that “this account is different”. Agents need much more of that operating context to be explicit.</p>
+<p>That is why the CRM-versus-process question becomes an AI-readiness issue as well. It follows directly from the <a href="/articles/revops-operating-system.html">Revenue System Model</a>: CRM sits downstream of Process, and AI inherits ambiguity from the layers before it.</p>
+
+<h2 id="monday">What to do on Monday morning</h2>
+<p>Pick one issue your team currently blames on the CRM. Take three real records where it happened and run the four-question diagnostic.</p>
+<p>If the failure appears before configuration, close the operating decision first. If the process is clear, the evidence exists and people follow it, then you know something useful: <strong>now it is worth changing the technology.</strong></p>
+
+<div class="references"><h2>Sources</h2><ul><li><a href="https://knowledge.hubspot.com/object-settings/set-up-and-customize-pipelines" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Set up and manage object pipelines</a></li><li><a href="https://learn.microsoft.com/en-us/dynamics365/sales/nurture-sales-from-lead-order-sales" target="_blank" rel="noopener noreferrer">Microsoft Learn — Understand the sales process</a></li></ul></div>
+<div class="next-reading"><h2>Keep going</h2><div class="next-reading-grid"><a href="/articles/revops-operating-system.html">What is a Revenue System? →</a><a href="/articles/crm-adoption-design.html">Why CRM adoption is an operating-design issue →</a><a href="/articles/lifecycle-stage-lead-status-deal-stage.html">Lifecycle Stage vs Lead Status vs Deal Stage →</a></div></div>
+</div></article><aside class="article-aside"><div><h3>In this article</h3><a href="#four-places">Four possible causes</a><a href="#diagnostic">Diagnostic</a><a href="#example">Example</a><a href="#ai">AI impact</a><a href="#monday">Apply it</a></div><div><h3>Apply it</h3><p>If you still cannot locate the issue, diagnose the full system.</p><a href="/assessment.html">Take the assessment →</a></div></aside></div></main>
+<footer class="site-footer"><div class="shell footer-top"><div><a class="brand brand-light" href="/"><span>RevOps</span><strong>Hubs</strong></a><p>Frameworks, tools and research for building better B2B revenue systems.</p></div><div class="footer-links"><div><b>Explore</b><a href="/learn.html">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a></div><div><b>About</b><a href="/about.html">About RevOpsHubs</a><a href="https://www.smartlinks.pt/" rel="external">SmartLinks</a></div></div></div><div class="shell footer-bottom"><span>RevOpsHubs is a SmartLinks initiative.</span><span>© 2026 SmartLinks</span></div></footer><script src="/app.js" defer></script></body></html>

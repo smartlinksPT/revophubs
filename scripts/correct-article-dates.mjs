@@ -7,7 +7,9 @@ const dates = {
   'revenue-system': ['2026-10-04', '2026-10-04'],
   'hubspot-pricing-credits-emea': ['2026-10-04', '2026-10-04'],
   'shadow-agents': ['2026-10-04', '2026-10-04'],
-  'agent-operating-contract': ['2026-10-04', '2026-10-04']
+  'agent-operating-contract': ['2026-10-04', '2026-10-04'],
+  'semantic-debt': ['2026-10-04', '2026-10-04'],
+  'workflow-vs-agent': ['2026-10-04', '2026-10-04']
 };
 
 for (const pair of articlePairs) {

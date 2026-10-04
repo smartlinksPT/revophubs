@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shadow Agents: the next RevOps governance problem — RevOpsHubs</title>
+<meta name="description" content="AI agents can now read and write to CRM systems. A practical framework to identify Shadow Agents, reduce risk and preserve useful autonomy.">
+<link rel="canonical" href="https://revophubs.com/articles/shadow-agents.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/content.css"></head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="RevOpsHubs home"><span>RevOps</span><strong>Hubs</strong></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/learn.html" aria-current="page">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a><a href="/model.html">Methodology</a></nav><a class="language-switch" href="/pt/articles/shadow-agents.html" lang="pt-PT" hreflang="pt-PT" aria-label="Ver em português">PT</a><a class="button button-small header-cta" href="/assessment.html">Assess your Revenue System</a></div></header>
+<main id="main"><div class="shell article-layout"><article><header class="article-head"><p class="tag">AI · Governance · RevOps · 12 min read</p><h1>The next RevOps problem is not Shadow IT. It is Shadow Agents.</h1><p class="article-deck">When an agent can read the CRM, reach into external systems and take action, you are no longer governing software alone. You are governing new actors inside the Revenue System.</p><p class="article-byline">RevOpsHubs analysis · 4 October 2026</p></header><div class="article-body">
+<p>Picture a fairly ordinary B2B team a few months from now.</p>
+<p>One seller connects ChatGPT to the CRM to prepare for meetings. Another builds an agent that researches accounts and updates fields. Marketing connects an agent to an external tool through MCP. Customer Success experiments with another that summarizes tickets and creates follow-up tasks.</p>
+<p>No new CRM was purchased. No formal integration project was opened. In some cases, nobody wrote any code.</p>
+<p>Yet the company just added four new actors with access to operational context — and some of them can take action.</p>
+<p>At RevOpsHubs, we call these <strong>Shadow Agents</strong>.</p>
+<div class="article-cta"><h3>RevOpsHubs Thesis</h3><p><strong>The risk is no longer only “which software are people using outside governance?”. It becomes “which agents can see, decide and act inside our systems — and who is accountable for them?”.</strong></p></div>
+
+<h2 id="definition">What is a Shadow Agent?</h2>
+<p>We are not presenting the term as an established industry category. It is a useful name for an operational problem that is starting to emerge.</p>
+<p>A <strong>Shadow Agent</strong> is an AI agent, assistant or app with access to company systems, data or tools that has moved into use without a clear definition of <strong>owner, scope, permissions, approvals, monitoring and success criteria</strong>.</p>
+<p>Importantly, a Shadow Agent does not have to be malicious, secret or even technically unauthorized. It may have been created by someone with completely legitimate access. The problem is the absence of an operating model around it.</p>
+<div class="definition-table">
+<div class="definition-head"><span>Phenomenon</span><span>What escapes governance</span></div>
+<div><span><strong>Shadow IT</strong></span><span>Software and services used outside the formal catalog or approval process.</span></div>
+<div><span><strong>Shadow AI</strong></span><span>Models and assistants used with company data or work without sufficient governance.</span></div>
+<div><span><strong>Shadow Agents</strong></span><span>Agents with context and tools that can decide or act without a clear operating contract.</span></div>
+</div>
+
+<h2 id="why-now">Why this becomes a problem now</h2>
+<p>The boundary between “assistant that answers” and “system that acts” is disappearing quickly.</p>
+<p>In April 2026, the <a href="https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available" target="_blank" rel="noopener noreferrer">remote HubSpot MCP server became generally available</a> with write capabilities across multiple CRM objects. MCP-compatible AI tools can therefore do more than retrieve contacts, companies or deals: within existing user permissions, they can update parts of the CRM.</p>
+<p>HubSpot also lets agents created in Agent Builder connect to external systems through the <a href="https://knowledge.hubspot.com/integrations/customize-breeze-agents-with-hubspot-mcp-client" target="_blank" rel="noopener noreferrer">HubSpot MCP Client</a>, giving them access to live business data and actions in supported applications.</p>
+<p>On the ChatGPT side, full MCP support for Business and Enterprise/Edu environments includes <a href="https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-connectors-in-chatgpt" target="_blank" rel="noopener noreferrer">write and modify actions</a>, with admin, access and approval controls.</p>
+<p>None of that is inherently a problem. In fact, those capabilities are exactly what make agents useful.</p>
+<p>The problem appears when organizations continue to govern them as if they were just another SaaS seat.</p>
+<blockquote>A license grants access. An agent can turn access into action.</blockquote>
+
+<h2 id="risk-model">The Shadow Agent Risk Model</h2>
+<p>When you assess an agent, “is it approved?” is too small a question. We propose seven instead.</p>
+<div class="reason-list">
+<article><b>01</b><div><h3>Identity — who is actually acting?</h3><p>Does the agent inherit a user's permissions, use a service account or rely on shared credentials? If something goes wrong, can the action be tied to a clear identity?</p></div></article>
+<article><b>02</b><div><h3>Context — what can it see?</h3><p>Contacts, deals, emails, internal notes, documents, financial data? An agent should not inherit all available context simply because it technically can.</p></div></article>
+<article><b>03</b><div><h3>Tools — what can it call?</h3><p>Searching is different from updating. Creating a task is different from sending an email. Deleting a record is different from summarizing it. Tool surface is the real action surface.</p></div></article>
+<article><b>04</b><div><h3>Write — what can it change?</h3><p>Which fields, objects or systems are writable? Are any actions irreversible? Can the agent directly affect a customer?</p></div></article>
+<article><b>05</b><div><h3>Approval — where must it stop?</h3><p>Which actions can run autonomously and which require human approval? OpenAI, for example, supports write approvals and recommends human review around sensitive side effects.</p></div></article>
+<article><b>06</b><div><h3>Audit — can you reconstruct what happened?</h3><p>You need to know what context was used, which tool was called, what action happened and what the outcome was. Without logs or traces, operational learning is weak.</p></div></article>
+<article><b>07</b><div><h3>Cost — how much can it consume?</h3><p>As software moves toward usage-based pricing, autonomy has a financial dimension. A badly bounded agent can execute the wrong work and spend money doing it.</p></div></article>
+</div>
+<p>Together, these seven dimensions form the agent's <strong>operational surface</strong>. The larger that surface, the stronger the governance needs to be.</p>
+
+<h2 id="example">The hardest failure is not hallucination. It is plausible action.</h2>
+<p>Take a simple prospecting agent. It can read the CRM, research accounts on the web, update properties and create tasks for sellers.</p>
+<p>It is tempting to assume the primary risk is fabricated information.</p>
+<p>But some of the more difficult failures are far less dramatic:</p>
+<ul><li>it classifies an account correctly against an ICP definition that is already outdated;</li><li>it updates a valid property that triggers a workflow nobody considered;</li><li>it creates legitimate tasks for accounts owned by another territory;</li><li>it repeats an action hundreds of times because the trigger is too broad;</li><li>it gains access to a newly exposed MCP tool that was never reviewed by the process owner.</li></ul>
+<p>None of these failures requires a rogue AI. A plausible decision inside a poorly bounded system is enough.</p>
+<p>This is why <a href="/articles/ai-ready-revenue-system.html">AI readiness starts before the AI layer</a>. The agent inherits definitions, ownership, data quality and rules that already exist — or were never formalized.</p>
+
+<h2 id="governance">Useful governance does not mean blocking agents</h2>
+<p>The wrong response is to turn every AI experiment into a six-week project with five approvals.</p>
+<p>That simply pushes useful experimentation back outside the formal process.</p>
+<p>The goal is <strong>bounded autonomy</strong>: teams can experiment and create value, but inside explicit limits.</p>
+<div class="governance-grid">
+<article><span>Inventory</span><h3>Register agents, not only applications</h3><p>Name, owner, purpose, connected systems, available tools, data used and status: test, pilot or production.</p></article>
+<article><span>Least privilege</span><h3>Give only the access required</h3><p>HubSpot itself recommends selecting only the MCP tools needed for an agent's task. Start with read access and open write access when there is a clear operating reason.</p></article>
+<article><span>Approval</span><h3>Separate recommendation from execution</h3><p>Send, edit, delete and customer-facing commitments should not use the same approval policy as search or summarization.</p></article>
+<article><span>Testing</span><h3>Simulate before autonomy</h3><p>Test normal cases, edge cases and bad input. HubSpot lets teams simulate agent runs without changing CRM data or consuming credits.</p></article>
+<article><span>Observability</span><h3>Keep traces and review failures</h3><p>The point is not employee surveillance. It is understanding how the system decides and improving prompts, tools, data and guardrails.</p></article>
+<article><span>Kill switch</span><h3>Know how to stop it</h3><p>Who can disable the agent, revoke a connection, remove write actions or lower usage limits? That path should be clear before an incident.</p></article>
+</div>
+
+<h2 id="audit">A 30-minute RevOps audit</h2>
+<p>If you own CRM, automation or RevOps, start with one sheet. Not a 40-page policy.</p>
+<ol><li><strong>List the agents and assistants the team uses with company data.</strong> Include ChatGPT, HubSpot, internal automations and external tools.</li><li><strong>Mark which ones are connected to operational systems.</strong> CRM, email, Slack, support, ERP, data warehouse.</li><li><strong>Separate read from write.</strong> What only retrieves? What can edit, create, send or delete?</li><li><strong>Name the owner.</strong> A person, not “Sales” or “Marketing”.</li><li><strong>Mark approval boundaries.</strong> Especially external, irreversible or financially material actions.</li><li><strong>Check logs, limits and revocation.</strong> If nobody knows how to stop it quickly, there is work to do.</li></ol>
+<p>If an agent fails three or four of these checks, that does not automatically mean it should be switched off. It means it is not production-ready yet.</p>
+
+<h2 id="operating-contract">From agent inventory to an operating contract</h2>
+<p>Inventory creates visibility. It does not define behavior.</p>
+<p>For every agent entering production, one more question matters: <strong>under what contract is this agent allowed to operate?</strong></p>
+<p>That is the next RevOpsHubs framework: <a href="/learn/ai-agent-operating-contract/">the Agent Operating Contract</a>. Instead of starting with a prompt, it starts with objective, context, tools, permissions, approvals, budget, metrics, escalation and rollback.</p>
+<p>A company can have excellent prompts and poor governance.</p>
+
+<h2 id="conclusion">RevOps will govern actors, not only systems</h2>
+<p>For years, the stack was relatively static. Companies bought tools, assigned access, created integrations and audited users.</p>
+<p>Agents change the geometry. They can combine context across systems, choose tools and execute action sequences that previously required people.</p>
+<p>That is precisely why they are valuable.</p>
+<p>It also changes the governance question:</p>
+<blockquote>Not only “who has access to the CRM?” but “who — human or agent — can do what, with which context, under which limits and with whose accountability?”</blockquote>
+<p>That is now a Revenue Operations question.</p>
+
+<div class="references"><h2>Public sources</h2><ul>
+<li><a href="https://developers.hubspot.com/changelog/remote-hubspot-mcp-server-is-now-generally-available" target="_blank" rel="noopener noreferrer">HubSpot Developers — Remote HubSpot MCP server is now generally available</a></li>
+<li><a href="https://knowledge.hubspot.com/integrations/customize-breeze-agents-with-hubspot-mcp-client" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Connect apps to HubSpot's AI agents</a></li>
+<li><a href="https://knowledge.hubspot.com/ai/review-estimated-credit-costs-when-using-agents" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Test and control agent credit usage</a></li>
+<li><a href="https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-connectors-in-chatgpt" target="_blank" rel="noopener noreferrer">OpenAI — Developer mode and MCP apps in ChatGPT</a></li>
+<li><a href="https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business" target="_blank" rel="noopener noreferrer">OpenAI — ChatGPT Workspace Agents for Enterprise and Business</a></li>
+</ul></div>
+<div class="next-reading"><h2>Keep going</h2><div class="next-reading-grid"><a href="/learn/ai-agent-operating-contract/">The Agent Operating Contract →</a><a href="/articles/ai-ready-revenue-system.html">AI readiness starts before AI →</a><a href="/learn/hubspot-pricing-credits-emea/">HubSpot's new credits model →</a><a href="/articles/revops-operating-system.html">What is a Revenue System? →</a></div></div>
+</div></article><aside class="article-aside"><div><h3>In this article</h3><a href="#definition">What is a Shadow Agent?</a><a href="#why-now">Why now</a><a href="#risk-model">Risk Model</a><a href="#governance">Useful governance</a><a href="#audit">30-minute audit</a><a href="#operating-contract">Operating contract</a></div><div><h3>Framework</h3><p>Identity · Context · Tools · Write · Approval · Audit · Cost.</p><a href="/learn/ai-agent-operating-contract/">Apply it to your next agent →</a></div></aside></div></main>
+<footer class="site-footer"><div class="shell footer-top"><div><a class="brand brand-light" href="/"><span>RevOps</span><strong>Hubs</strong></a><p>Frameworks, tools and research for building better B2B revenue systems.</p></div><div class="footer-links"><div><b>Explore</b><a href="/learn.html">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a><a href="/model.html">Methodology</a></div><div><b>About</b><a href="/about.html">About RevOpsHubs</a><a href="https://www.smartlinks.pt/" rel="external">SmartLinks</a></div></div></div><div class="shell footer-bottom"><span>RevOpsHubs is a SmartLinks research and education initiative.</span><span>© 2026 SmartLinks</span></div></footer><script src="/app.js" defer></script></body></html>

@@ -4,6 +4,6 @@
   "private": true,
   "description": "RevOpsHubs — a SmartLinks research and education initiative for practical Revenue Operations knowledge, research and tools.",
   "scripts": {
-    "build": "node scripts/apply-v1-1.mjs && node scripts/add-hubspot-pricing-evidence.mjs && node scripts/integrate-agent-governance-content.mjs && node scripts/migrate-learn-routes.mjs && node scripts/sanitize-public-sources.mjs && node scripts/use-hosted-newsletter.mjs && node scripts/enrich-seo.mjs && node scripts/correct-article-dates.mjs && node scripts/enforce-link-colors.mjs && node scripts/build-discovery.mjs && node scripts/audit-site.mjs"
+    "build": "node scripts/apply-v1-1.mjs && node scripts/add-hubspot-pricing-evidence.mjs && node scripts/integrate-agent-governance-content.mjs && node scripts/integrate-semantic-debt-content.mjs && node scripts/migrate-learn-routes.mjs && node scripts/sanitize-public-sources.mjs && node scripts/use-hosted-newsletter.mjs && node scripts/enrich-seo.mjs && node scripts/correct-article-dates.mjs && node scripts/enforce-link-colors.mjs && node scripts/build-discovery.mjs && node scripts/audit-site.mjs"
   }
 }

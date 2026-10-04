@@ -57,6 +57,18 @@ export const articlePairs = [
     enFile:'learn/hubspot-pricing-credits-emea/index.html', enPath:'/learn/hubspot-pricing-credits-emea/', enMarkdown:'/markdown/learn/hubspot-pricing-credits-emea.md',
     ptFile:'pt/learn/hubspot-pricing-creditos-emea/index.html', ptPath:'/pt/learn/hubspot-pricing-creditos-emea/', ptMarkdown:'/pt/markdown/learn/hubspot-pricing-creditos-emea.md',
     keywords:['HubSpot pricing 2026','HubSpot Credits','HubSpot EMEA pricing','flexible seats and credits','AI usage-based pricing']
+  },
+  {
+    id:'shadow-agents', legacyFile:'shadow-agents.html',
+    enFile:'learn/shadow-agents/index.html', enPath:'/learn/shadow-agents/', enMarkdown:'/markdown/learn/shadow-agents.md',
+    ptFile:'pt/learn/shadow-agents/index.html', ptPath:'/pt/learn/shadow-agents/', ptMarkdown:'/pt/markdown/learn/shadow-agents.md',
+    keywords:['shadow agents','AI agent governance','MCP security','RevOps AI governance','CRM AI agents']
+  },
+  {
+    id:'agent-operating-contract', legacyFile:'agent-operating-contract.html',
+    enFile:'learn/ai-agent-operating-contract/index.html', enPath:'/learn/ai-agent-operating-contract/', enMarkdown:'/markdown/learn/ai-agent-operating-contract.md',
+    ptFile:'pt/learn/contrato-operacional-agentes-ia/index.html', ptPath:'/pt/learn/contrato-operacional-agentes-ia/', ptMarkdown:'/pt/markdown/learn/contrato-operacional-agentes-ia.md',
+    keywords:['AI agent governance framework','AI agent checklist','agent operating contract','AI agent production','RevOps agents']
   }
 ];
 

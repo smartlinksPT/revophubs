@@ -8,6 +8,7 @@ const staticDefs = [
   ['ai-revops','ai-revops.html','/ai-revops.html','pt/ai-revops.html','/pt/ai-revops.html','TechArticle','Hubs','Hubs','/markdown/ai-revops.md','/pt/markdown/ai-revops.md'],
   ['ai-tools','ai-tools.html','/ai-tools.html','pt/ai-tools.html','/pt/ai-tools.html','CollectionPage','Tools','Ferramentas','/markdown/ai-tools.md','/pt/markdown/ai-tools.md'],
   ['tools','tools.html','/tools.html','pt/tools.html','/pt/tools.html','CollectionPage','Tools','Ferramentas','/markdown/tools.md','/pt/markdown/tools.md'],
+  ['semantic-debt-audit','tools/semantic-debt-audit/index.html','/tools/semantic-debt-audit/','pt/tools/semantic-debt-audit/index.html','/pt/tools/semantic-debt-audit/','WebApplication','Tools','Ferramentas','/markdown/tools/semantic-debt-audit.md','/pt/markdown/tools/semantic-debt-audit.md'],
   ['research','research.html','/research.html','pt/research.html','/pt/research.html','WebPage','Research','Investigação','/markdown/research.md','/pt/markdown/research.md'],
   ['about','about.html','/about.html','pt/about.html','/pt/about.html','AboutPage','Home','Início','/markdown/about.md','/pt/markdown/about.md'],
   ['model','model.html','/model.html','pt/model.html','/pt/model.html','TechArticle','Methodology','Metodologia','/markdown/model.md','/pt/markdown/model.md'],
@@ -16,60 +17,17 @@ const staticDefs = [
 ];
 
 export const articlePairs = [
-  {
-    id:'what-is-revops', legacyFile:'what-is-revops.html',
-    enFile:'learn/what-is-revops/index.html', enPath:'/learn/what-is-revops/', enMarkdown:'/markdown/learn/what-is-revops.md',
-    ptFile:'pt/learn/o-que-e-revops/index.html', ptPath:'/pt/learn/o-que-e-revops/', ptMarkdown:'/pt/markdown/learn/o-que-e-revops.md',
-    keywords:['what is RevOps','Revenue Operations definition','RevOps history','Revenue Operations']
-  },
-  {
-    id:'revenue-system', legacyFile:'revops-operating-system.html',
-    enFile:'learn/what-is-a-revenue-system/index.html', enPath:'/learn/what-is-a-revenue-system/', enMarkdown:'/markdown/learn/what-is-a-revenue-system.md',
-    ptFile:'pt/learn/o-que-e-um-revenue-system/index.html', ptPath:'/pt/learn/o-que-e-um-revenue-system/', ptMarkdown:'/pt/markdown/learn/o-que-e-um-revenue-system.md',
-    keywords:['Revenue System','B2B revenue system','Revenue System Model','AI-ready revenue system']
-  },
-  {
-    id:'pipeline-system-problem', legacyFile:'pipeline-system-problem.html',
-    enFile:'learn/why-more-pipeline-does-not-fix-a-system-problem/index.html', enPath:'/learn/why-more-pipeline-does-not-fix-a-system-problem/', enMarkdown:'/markdown/learn/why-more-pipeline-does-not-fix-a-system-problem.md',
-    ptFile:'pt/learn/porque-mais-pipeline-nao-resolve-um-problema-de-sistema/index.html', ptPath:'/pt/learn/porque-mais-pipeline-nao-resolve-um-problema-de-sistema/', ptMarkdown:'/pt/markdown/learn/porque-mais-pipeline-nao-resolve-um-problema-de-sistema.md',
-    keywords:['B2B pipeline','revenue constraint','demand generation']
-  },
-  {
-    id:'revenue-handoffs', legacyFile:'revenue-handoffs.html',
-    enFile:'learn/revenue-handoffs/index.html', enPath:'/learn/revenue-handoffs/', enMarkdown:'/markdown/learn/revenue-handoffs.md',
-    ptFile:'pt/learn/hand-offs-de-receita/index.html', ptPath:'/pt/learn/hand-offs-de-receita/', ptMarkdown:'/pt/markdown/learn/hand-offs-de-receita.md',
-    keywords:['revenue hand-offs','marketing sales alignment','revenue process']
-  },
-  {
-    id:'crm-adoption', legacyFile:'crm-adoption-design.html',
-    enFile:'learn/crm-adoption/index.html', enPath:'/learn/crm-adoption/', enMarkdown:'/markdown/learn/crm-adoption.md',
-    ptFile:'pt/learn/adocao-do-crm/index.html', ptPath:'/pt/learn/adocao-do-crm/', ptMarkdown:'/pt/markdown/learn/adocao-do-crm.md',
-    keywords:['CRM adoption','CRM operating design','CRM governance']
-  },
-  {
-    id:'ai-ready-revenue-system', legacyFile:'ai-ready-revenue-system.html',
-    enFile:'learn/ai-ready-revenue-system/index.html', enPath:'/learn/ai-ready-revenue-system/', enMarkdown:'/markdown/learn/ai-ready-revenue-system.md',
-    ptFile:'pt/learn/sistema-de-receita-preparado-para-ia/index.html', ptPath:'/pt/learn/sistema-de-receita-preparado-para-ia/', ptMarkdown:'/pt/markdown/learn/sistema-de-receita-preparado-para-ia.md',
-    keywords:['AI readiness','Revenue Operations AI','AI governance']
-  },
-  {
-    id:'hubspot-pricing-credits-emea', legacyFile:'hubspot-pricing-credits-emea.html',
-    enFile:'learn/hubspot-pricing-credits-emea/index.html', enPath:'/learn/hubspot-pricing-credits-emea/', enMarkdown:'/markdown/learn/hubspot-pricing-credits-emea.md',
-    ptFile:'pt/learn/hubspot-pricing-creditos-emea/index.html', ptPath:'/pt/learn/hubspot-pricing-creditos-emea/', ptMarkdown:'/pt/markdown/learn/hubspot-pricing-creditos-emea.md',
-    keywords:['HubSpot pricing 2026','HubSpot Credits','HubSpot EMEA pricing','flexible seats and credits','AI usage-based pricing']
-  },
-  {
-    id:'shadow-agents', legacyFile:'shadow-agents.html',
-    enFile:'learn/shadow-agents/index.html', enPath:'/learn/shadow-agents/', enMarkdown:'/markdown/learn/shadow-agents.md',
-    ptFile:'pt/learn/shadow-agents/index.html', ptPath:'/pt/learn/shadow-agents/', ptMarkdown:'/pt/markdown/learn/shadow-agents.md',
-    keywords:['shadow agents','AI agent governance','MCP security','RevOps AI governance','CRM AI agents']
-  },
-  {
-    id:'agent-operating-contract', legacyFile:'agent-operating-contract.html',
-    enFile:'learn/ai-agent-operating-contract/index.html', enPath:'/learn/ai-agent-operating-contract/', enMarkdown:'/markdown/learn/ai-agent-operating-contract.md',
-    ptFile:'pt/learn/contrato-operacional-agentes-ia/index.html', ptPath:'/pt/learn/contrato-operacional-agentes-ia/', ptMarkdown:'/pt/markdown/learn/contrato-operacional-agentes-ia.md',
-    keywords:['AI agent governance framework','AI agent checklist','agent operating contract','AI agent production','RevOps agents']
-  }
+  {id:'what-is-revops',legacyFile:'what-is-revops.html',enFile:'learn/what-is-revops/index.html',enPath:'/learn/what-is-revops/',enMarkdown:'/markdown/learn/what-is-revops.md',ptFile:'pt/learn/o-que-e-revops/index.html',ptPath:'/pt/learn/o-que-e-revops/',ptMarkdown:'/pt/markdown/learn/o-que-e-revops.md',keywords:['what is RevOps','Revenue Operations definition','RevOps history','Revenue Operations']},
+  {id:'revenue-system',legacyFile:'revops-operating-system.html',enFile:'learn/what-is-a-revenue-system/index.html',enPath:'/learn/what-is-a-revenue-system/',enMarkdown:'/markdown/learn/what-is-a-revenue-system.md',ptFile:'pt/learn/o-que-e-um-revenue-system/index.html',ptPath:'/pt/learn/o-que-e-um-revenue-system/',ptMarkdown:'/pt/markdown/learn/o-que-e-um-revenue-system.md',keywords:['Revenue System','B2B revenue system','Revenue System Model','AI-ready revenue system']},
+  {id:'pipeline-system-problem',legacyFile:'pipeline-system-problem.html',enFile:'learn/why-more-pipeline-does-not-fix-a-system-problem/index.html',enPath:'/learn/why-more-pipeline-does-not-fix-a-system-problem/',enMarkdown:'/markdown/learn/why-more-pipeline-does-not-fix-a-system-problem.md',ptFile:'pt/learn/porque-mais-pipeline-nao-resolve-um-problema-de-sistema/index.html',ptPath:'/pt/learn/porque-mais-pipeline-nao-resolve-um-problema-de-sistema/',ptMarkdown:'/pt/markdown/learn/porque-mais-pipeline-nao-resolve-um-problema-de-sistema.md',keywords:['B2B pipeline','revenue constraint','demand generation']},
+  {id:'revenue-handoffs',legacyFile:'revenue-handoffs.html',enFile:'learn/revenue-handoffs/index.html',enPath:'/learn/revenue-handoffs/',enMarkdown:'/markdown/learn/revenue-handoffs.md',ptFile:'pt/learn/hand-offs-de-receita/index.html',ptPath:'/pt/learn/hand-offs-de-receita/',ptMarkdown:'/pt/markdown/learn/hand-offs-de-receita.md',keywords:['revenue hand-offs','marketing sales alignment','revenue process']},
+  {id:'crm-adoption',legacyFile:'crm-adoption-design.html',enFile:'learn/crm-adoption/index.html',enPath:'/learn/crm-adoption/',enMarkdown:'/markdown/learn/crm-adoption.md',ptFile:'pt/learn/adocao-do-crm/index.html',ptPath:'/pt/learn/adocao-do-crm/',ptMarkdown:'/pt/markdown/learn/adocao-do-crm.md',keywords:['CRM adoption','CRM operating design','CRM governance']},
+  {id:'ai-ready-revenue-system',legacyFile:'ai-ready-revenue-system.html',enFile:'learn/ai-ready-revenue-system/index.html',enPath:'/learn/ai-ready-revenue-system/',enMarkdown:'/markdown/learn/ai-ready-revenue-system.md',ptFile:'pt/learn/sistema-de-receita-preparado-para-ia/index.html',ptPath:'/pt/learn/sistema-de-receita-preparado-para-ia/',ptMarkdown:'/pt/markdown/learn/sistema-de-receita-preparado-para-ia.md',keywords:['AI readiness','Revenue Operations AI','AI governance']},
+  {id:'hubspot-pricing-credits-emea',legacyFile:'hubspot-pricing-credits-emea.html',enFile:'learn/hubspot-pricing-credits-emea/index.html',enPath:'/learn/hubspot-pricing-credits-emea/',enMarkdown:'/markdown/learn/hubspot-pricing-credits-emea.md',ptFile:'pt/learn/hubspot-pricing-creditos-emea/index.html',ptPath:'/pt/learn/hubspot-pricing-creditos-emea/',ptMarkdown:'/pt/markdown/learn/hubspot-pricing-creditos-emea.md',keywords:['HubSpot pricing 2026','HubSpot Credits','HubSpot EMEA pricing','flexible seats and credits','AI usage-based pricing']},
+  {id:'shadow-agents',legacyFile:'shadow-agents.html',enFile:'learn/shadow-agents/index.html',enPath:'/learn/shadow-agents/',enMarkdown:'/markdown/learn/shadow-agents.md',ptFile:'pt/learn/shadow-agents/index.html',ptPath:'/pt/learn/shadow-agents/',ptMarkdown:'/pt/markdown/learn/shadow-agents.md',keywords:['shadow agents','AI agent governance','MCP security','RevOps AI governance','CRM AI agents']},
+  {id:'agent-operating-contract',legacyFile:'agent-operating-contract.html',enFile:'learn/ai-agent-operating-contract/index.html',enPath:'/learn/ai-agent-operating-contract/',enMarkdown:'/markdown/learn/ai-agent-operating-contract.md',ptFile:'pt/learn/contrato-operacional-agentes-ia/index.html',ptPath:'/pt/learn/contrato-operacional-agentes-ia/',ptMarkdown:'/pt/markdown/learn/contrato-operacional-agentes-ia.md',keywords:['AI agent governance framework','AI agent checklist','agent operating contract','AI agent production','RevOps agents']},
+  {id:'semantic-debt',legacyFile:'semantic-debt.html',enFile:'learn/semantic-debt/index.html',enPath:'/learn/semantic-debt/',enMarkdown:'/markdown/learn/semantic-debt.md',ptFile:'pt/learn/divida-semantica-crm/index.html',ptPath:'/pt/learn/divida-semantica-crm/',ptMarkdown:'/pt/markdown/learn/divida-semantica-crm.md',keywords:['semantic debt CRM','AI ready CRM data','CRM data definitions','RevOps data governance','semantic data quality']},
+  {id:'workflow-vs-agent',legacyFile:'workflow-vs-agent.html',enFile:'learn/workflow-vs-ai-agent/index.html',enPath:'/learn/workflow-vs-ai-agent/',enMarkdown:'/markdown/learn/workflow-vs-ai-agent.md',ptFile:'pt/learn/workflow-ou-agente-ia/index.html',ptPath:'/pt/learn/workflow-ou-agente-ia/',ptMarkdown:'/pt/markdown/learn/workflow-ou-agente-ia.md',keywords:['workflow vs AI agent','when to use AI agents','AI workflow automation','RevOps automation','agent decision framework']}
 ];
 
 export const pagePairs = [

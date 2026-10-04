@@ -1,0 +1,64 @@
+<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Problema no CRM ou no processo? Como diagnosticar — RevOpsHubs</title>
+<meta name="description" content="Um diagnóstico prático para perceber se um problema comercial vem do CRM, do processo, dos dados ou da adoção — antes de reconfigurar a ferramenta.">
+<link rel="canonical" href="https://revophubs.com/pt/articles/crm-vs-process.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/content.css"></head><body>
+<a class="skip-link" href="#main">Saltar para o conteúdo</a>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="/pt/" aria-label="RevOpsHubs início"><span>RevOps</span><strong>Hubs</strong></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Navegação principal"><a href="/pt/learn.html" aria-current="page">Aprender</a><a href="/pt/hubs.html">Hubs</a><a href="/pt/tools.html">Ferramentas</a><a href="/pt/research.html">Investigação</a><a href="/pt/model.html">Metodologia</a></nav><a class="language-switch" href="/articles/crm-vs-process.html" lang="en" hreflang="en" aria-label="Ver em inglês">EN</a><a class="button button-small header-cta" href="/pt/assessment.html">Avaliar o seu Revenue System</a></div></header>
+<main id="main"><div class="shell article-layout"><article><header class="article-head"><p class="tag">CRM · Processo · 9 min de leitura</p><h1>O problema está no CRM ou no processo?</h1><p class="article-deck">Quando alguém diz “o CRM não funciona”, a pior coisa que podemos fazer é começar logo a mexer em campos, pipelines e workflows. Primeiro é preciso perceber onde está realmente o problema.</p><p class="article-byline">Guia de campo RevOpsHubs · outubro de 2026</p></header><div class="article-body">
+<p>Há uma frase que aparece constantemente em projetos de CRM: <strong>“isto no HubSpot não funciona”</strong>. Ou no Salesforce. Ou no Dynamics.</p>
+<p>Às vezes é verdade. A configuração está errada, falta uma propriedade, a automação não dispara ou a integração partiu.</p>
+<p>Mas muitas outras vezes o CRM está apenas a mostrar um problema que já existia antes dele.</p>
+<p>Uma etapa comercial que ninguém sabe definir. Um hand-off que muda de pessoa para pessoa. Uma oportunidade que entra no pipeline demasiado cedo. Um vendedor que usa um critério diferente do colega.</p>
+<div class="article-cta"><h3>Tese RevOpsHubs</h3><p><strong>Antes de reconfigurar o CRM, diagnostique a camada onde o comportamento está a falhar.</strong> Corrigir a ferramenta quando o problema é de processo cria uma versão mais organizada do mesmo problema.</p></div>
+
+<h2 id="four-places">Quatro sítios onde o problema pode estar</h2>
+<p>Na prática, quase todos os “problemas de CRM” que encontramos começam num destes quatro pontos.</p>
+<h3>1. Processo</h3>
+<p>A organização ainda não decidiu claramente o que deve acontecer. Quem qualifica? Quando uma oportunidade é criada? O que significa avançar de etapa? Quem aceita um lead de Marketing?</p>
+<p>Se duas pessoas respondem de forma diferente à mesma pergunta, provavelmente ainda não temos um problema de CRM. Temos uma decisão operacional por fechar.</p>
+<h3>2. Representação no CRM</h3>
+<p>O processo existe e é compreendido, mas o CRM representa-o mal. As etapas não correspondem à realidade, faltam campos importantes, há propriedades duplicadas ou a automação obriga a equipa a contornar o sistema.</p>
+<p>Aqui, sim, mexer na configuração faz sentido.</p>
+<h3>3. Dados</h3>
+<p>O processo e a configuração podem estar certos, mas os dados chegam tarde, chegam incompletos ou contradizem-se entre sistemas. Um relatório errado pode ser um problema de dados, não de reporting.</p>
+<h3>4. Adoção</h3>
+<p>O sistema representa bem o trabalho e os dados necessários existem, mas as pessoas não o usam de forma consistente. Ainda assim, cuidado: baixa adoção nem sempre significa falta de formação. Como explicamos no artigo sobre <a href="/pt/articles/crm-adoption-design.html">adoção de CRM</a>, muitas vezes as pessoas evitam o sistema porque ele lhes pede trabalho sem lhes devolver utilidade.</p>
+
+<h2 id="diagnostic">Um diagnóstico simples antes de mexer no CRM</h2>
+<p>Quando aparece um problema, não comece por abrir as definições do portal. Pegue num caso real e siga-o.</p>
+<p>Por exemplo: uma oportunidade que ficou parada três semanas em “Proposta”.</p>
+<p>Faça estas quatro perguntas, pela ordem:</p>
+<ol><li><strong>Existe uma regra clara?</strong> Toda a gente consegue explicar o que tem de ser verdade para uma oportunidade entrar e sair desta etapa?</li><li><strong>O CRM representa essa regra?</strong> A etapa, propriedades e validações refletem aquilo que a empresa decidiu?</li><li><strong>Existe evidência fiável?</strong> Conseguimos perceber no registo se os critérios foram cumpridos?</li><li><strong>As pessoas seguem a regra?</strong> Ou existe um processo paralelo em folhas de cálculo, mensagens e memória?</li></ol>
+<p>O ponto onde a resposta muda de “sim” para “não” é, normalmente, onde vale a pena começar.</p>
+<blockquote>Não pergunte primeiro “o que devemos alterar no CRM?”. Pergunte “qual foi a primeira decisão que deixou de acontecer como devia?”.</blockquote>
+
+<h2 id="example">Um exemplo: “os leads de Marketing são maus”</h2>
+<p>Imagine que Sales diz que os leads recebidos de Marketing têm pouca qualidade.</p>
+<p>Uma reação típica é criar mais campos no formulário, mudar o scoring ou acrescentar regras de automação.</p>
+<p>Mas antes disso há perguntas mais básicas: Marketing e Sales usam a mesma definição de lead qualificado? A passagem de trabalho tem critérios de entrada explícitos? Sales regista de forma consistente porque rejeitou cada lead?</p>
+<p>Se essas decisões não existem, o CRM não consegue inventá-las. E automatizar o hand-off só faz a divergência circular mais depressa.</p>
+<p>Este é precisamente o tipo de falha que aparece nas <a href="/pt/articles/revenue-handoffs.html">passagens de trabalho entre equipas</a>.</p>
+
+<h2 id="evidence">A tecnologia deve expressar o processo, não substituí-lo</h2>
+<p>A documentação do HubSpot descreve pipelines como uma forma de visualizar processos através de etapas. A Microsoft, no Dynamics 365 Sales, descreve o processo comercial como um conjunto de passos repetíveis que os vendedores seguem ao longo da venda.</p>
+<div class="source-note"><strong>Evidência</strong><br>Os próprios fornecedores tratam pipeline e CRM como formas de representar e suportar um processo. A definição das regras comerciais continua a ser uma decisão da organização.</div>
+<p>Isto não significa que tudo tenha de ser desenhado fora da ferramenta. Significa apenas que configuração e decisão não são a mesma coisa.</p>
+
+<h2 id="ai">E com agentes de IA isto fica ainda mais importante</h2>
+<p>Um humano consegue muitas vezes compensar uma regra mal definida. Pergunta a um colega, interpreta o contexto ou percebe que “neste caso fazemos diferente”.</p>
+<p>Um agente precisa que grande parte desse contexto esteja explícito: estados, critérios, permissões, dados e exceções.</p>
+<p>Por isso, quando uma empresa prepara o CRM para IA, a pergunta “é CRM ou processo?” deixa de ser apenas uma questão de eficiência. Passa a ser uma questão de <strong>qualidade do contexto que damos à máquina</strong>.</p>
+<p>É uma consequência direta do <a href="/pt/articles/revops-operating-system.html">Revenue System Model</a>: CRM vem depois de Processo, e IA herda as ambiguidades das camadas anteriores.</p>
+
+<h2 id="monday">O que faria na segunda-feira de manhã</h2>
+<p>Escolha um problema concreto que a equipa atribui hoje ao CRM. Não um programa de transformação. Um problema.</p>
+<p>Pegue em três registos reais onde esse problema aconteceu e responda às quatro perguntas deste artigo. Se o problema aparece antes da configuração, não abra ainda o editor do CRM. Feche primeiro a decisão operacional.</p>
+<p>Se o processo está claro, os dados existem e as pessoas o seguem, então já sabe uma coisa importante: <strong>agora vale a pena mexer na tecnologia.</strong></p>
+
+<div class="references"><h2>Fontes</h2><ul>
+<li><a href="https://knowledge.hubspot.com/object-settings/set-up-and-customize-pipelines" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Set up and manage object pipelines</a></li>
+<li><a href="https://learn.microsoft.com/en-us/dynamics365/sales/nurture-sales-from-lead-order-sales" target="_blank" rel="noopener noreferrer">Microsoft Learn — Understand the sales process</a></li>
+</ul></div>
+<div class="next-reading"><h2>Continue a explorar</h2><div class="next-reading-grid"><a href="/pt/articles/revops-operating-system.html">O que é um Revenue System →</a><a href="/pt/articles/crm-adoption-design.html">Porque a adoção do CRM é um problema de desenho →</a><a href="/pt/articles/lifecycle-stage-lead-status-deal-stage.html">Lifecycle Stage, Lead Status ou Deal Stage? →</a></div></div>
+</div></article><aside class="article-aside"><div><h3>Neste artigo</h3><a href="#four-places">Quatro origens possíveis</a><a href="#diagnostic">Diagnóstico</a><a href="#example">Exemplo realista</a><a href="#ai">Impacto da IA</a><a href="#monday">Aplicar na prática</a></div><div><h3>Aplicar</h3><p>Se ainda não sabe em que camada está o problema, comece pelo sistema completo.</p><a href="/pt/assessment.html">Fazer o diagnóstico →</a></div></aside></div></main>
+<footer class="site-footer"><div class="shell footer-top"><div><a class="brand brand-light" href="/pt/"><span>RevOps</span><strong>Hubs</strong></a><p>Frameworks, ferramentas e investigação para construir melhores sistemas de receita B2B.</p></div><div class="footer-links"><div><b>Explorar</b><a href="/pt/learn.html">Aprender</a><a href="/pt/hubs.html">Hubs</a><a href="/pt/tools.html">Ferramentas</a><a href="/pt/research.html">Investigação</a></div><div><b>Sobre</b><a href="/pt/about.html">Sobre RevOpsHubs</a><a href="https://www.smartlinks.pt/" rel="external">SmartLinks</a></div></div></div><div class="shell footer-bottom"><span>RevOpsHubs é uma iniciativa da SmartLinks.</span><span>© 2026 SmartLinks</span></div></footer><script src="/app.js" defer></script></body></html>

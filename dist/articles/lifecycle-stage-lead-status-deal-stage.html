@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lifecycle Stage vs Lead Status vs Deal Stage — RevOpsHubs</title>
+<meta name="description" content="How to use Lifecycle Stage, Lead Status, Lead Stage and Deal Stage in HubSpot without mixing concepts, reporting or automation."
+<link rel="canonical" href="https://revophubs.com/articles/lifecycle-stage-lead-status-deal-stage.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/content.css"></head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="RevOpsHubs home"><span>RevOps</span><strong>Hubs</strong></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/learn.html" aria-current="page">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a><a href="/model.html">Methodology</a></nav><a class="language-switch" href="/pt/articles/lifecycle-stage-lead-status-deal-stage.html" lang="pt-PT" hreflang="pt-PT" aria-label="View in Portuguese">PT</a><a class="button button-small header-cta" href="/readiness.html">Check CRM readiness</a></div></header>
+<main id="main"><div class="shell article-layout"><article><header class="article-head"><p class="tag">HubSpot · CRM · 11 min read</p><h1>Lifecycle Stage vs Lead Status vs Deal Stage: what each should mean in HubSpot</h1><p class="article-deck">They often look like different ways to answer the same question — “where is this lead?” — but they should not. When all of them describe the same thing, the CRM starts contradicting itself.</p><p class="article-byline">RevOpsHubs field guide · October 2026</p></header><div class="article-body">
+<p>A mature HubSpot portal can easily show one contact as Marketing Qualified Lead in Lifecycle Stage, Connected in Lead Status and associated with a deal in Proposal Sent.</p>
+<p>Is that wrong? Not necessarily.</p>
+<p>The real problem is when nobody can explain <strong>what each state is meant to represent</strong>.</p>
+<div class="article-cta"><h3>Short answer</h3><p><strong>Lifecycle Stage</strong> should represent the contact or company's relationship with your revenue process. <strong>Lead Status</strong> should represent the current sales-working state of a qualified lead. <strong>Deal Stage</strong> should represent the progress of a specific opportunity.</p></div>
+
+<h2 id="lifecycle">Lifecycle Stage: where is this person or company in the revenue lifecycle?</h2>
+<p>HubSpot applies Lifecycle Stage to contacts and companies to categorise where they sit across marketing and sales processes. It is a relatively high-level view, useful for reporting, segmentation and automation.</p>
+<div class="source-note"><strong>Evidence</strong><br>HubSpot's current documentation defines Lifecycle Stage as a way to categorise contacts and companies based on where they are in marketing and sales processes and to track movement through that lifecycle.</div>
+<p>The important question here is not “has a seller called yet?”. It is: <strong>what is this person's or company's relationship with our revenue process?</strong></p>
+
+<h2 id="lead-status">Lead Status: what is happening in the sales follow-up?</h2>
+<p>The classic <strong>Lead Status</strong> property operates at a more tactical level. HubSpot describes it as sub-stages within Sales Qualified Lead, with default options such as New, Open, In Progress, Attempted to Contact, Connected, Bad Timing and Unqualified.</p>
+<p>It answers questions such as whether outreach has started, whether someone connected, whether the lead is being worked or whether timing is wrong.</p>
+<p>It should not replace Lifecycle Stage.</p>
+
+<h2 id="lead-object">Important: Lead Status is not the same as Lead Stage</h2>
+<p>This matters more now that HubSpot has a dedicated <strong>Leads</strong> object.</p>
+<p>In Sales Hub Professional and Enterprise, a Lead can be its own record associated with a contact or company. That object has its own pipeline and stages — by default New, Attempting, Connected, Qualified and Disqualified.</p>
+<p>So an organisation can now have:</p>
+<ul><li>Lifecycle Stage on the contact/company;</li><li>Lead Status as the traditional property;</li><li>Lead Pipeline Stage on a Lead record;</li><li>Deal Stage on a deal.</li></ul>
+<p>Without a clear operating model, duplication can grow very quickly.</p>
+<div class="article-cta"><h3>RevOpsHubs Thesis</h3><p>Do not use four properties to answer the same question. Every state should have <strong>a unique meaning, a clear owner and a concrete operational consequence</strong>.</p></div>
+
+<h2 id="deal-stage">Deal Stage: where is this specific opportunity?</h2>
+<p>Deal Stage belongs to the deal, not the contact.</p>
+<p>A contact can already be a Customer and still have a new upsell opportunity open. One company can have several deals at different stages. That is why Deal Stage should not be used as a shortcut for the overall account lifecycle.</p>
+<p>HubSpot associates deal stages with probabilities and uses them for pipeline and weighted amount calculations. But probability should not be the only design criterion.</p>
+<p>A strong stage represents <strong>a real change in the buying process</strong> with observable entry and exit evidence.</p>
+
+<h2 id="model">A simple model to keep the concepts separate</h2>
+<div class="source-note"><strong>RevOpsHubs Framework</strong><br><strong>Lifecycle Stage = relationship</strong><br><strong>Lead Status / Lead Stage = sales work</strong><br><strong>Deal Stage = opportunity progress</strong></div>
+<p>When unsure, ask:</p>
+<ol><li>Does this state belong to the person/company or to a specific opportunity?</li><li>Am I measuring lifecycle movement or sales execution/progress?</li><li>If this value changes, which decision, automation or report should change with it?</li></ol>
+
+<h2 id="bad-design">Signs the architecture is getting messy</h2>
+<ul><li>Lifecycle Stage moves backwards and forwards to track sales tasks.</li><li>Deal Stage is copied to contact properties for easier reporting.</li><li>Lead Status and Lead Stage contain almost identical values.</li><li>Workflows constantly try to keep several status fields in sync.</li><li>Marketing and Sales use different definitions of MQL, SQL and Opportunity.</li></ul>
+<p>At that point, more automation will not solve the problem. Return first to the diagnostic: <a href="/articles/crm-vs-process.html">is this a CRM problem or a process problem?</a></p>
+
+<h2 id="ai">Why this matters even more with AI</h2>
+<p>Overlapping status fields are annoying for an experienced human. For an agent, they are conflicting context.</p>
+<p>If Lifecycle Stage says SQL, Lead Stage says Disqualified and an open Deal exists, what should the agent infer? There may be a perfectly valid explanation, but it needs to exist in the operating model and data, not only in someone's head.</p>
+<p>That makes lifecycle architecture part of <a href="/articles/ai-ready-revenue-system.html">AI readiness</a>.</p>
+
+<h2 id="monday">What to do on Monday morning</h2>
+<p>Open your current Lifecycle Stage, Lead Status, Lead Stage — if you use the Leads object — and Deal Stage definitions.</p>
+<p>For every value, complete two sentences:</p>
+<p><strong>“This state means that…”</strong></p>
+<p><strong>“We know this is true when…”</strong></p>
+<p>If two properties end up with effectively the same definition, you found duplication. If nobody can complete the second sentence, you found a criteria problem.</p>
+
+<div class="references"><h2>Sources</h2><ul><li><a href="https://knowledge.hubspot.com/records/use-lifecycle-stages" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Use contact and company lifecycle stages</a></li><li><a href="https://knowledge.hubspot.com/object-settings/set-up-and-customize-pipelines" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Set up and manage object pipelines</a></li><li><a href="https://knowledge.hubspot.com/records/create-leads" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Create leads</a></li><li><a href="https://knowledge.hubspot.com/object-settings/set-up-lead-pipeline-automation" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Set up lead pipeline automation</a></li></ul></div>
+<div class="next-reading"><h2>Keep going</h2><div class="next-reading-grid"><a href="/articles/crm-vs-process.html">CRM or process? Diagnose it first →</a><a href="/articles/crm-adoption-design.html">CRM adoption is an operating-design issue →</a><a href="/articles/revops-operating-system.html">See where CRM fits in the Revenue System →</a></div></div>
+</div></article><aside class="article-aside"><div><h3>In this article</h3><a href="#lifecycle">Lifecycle Stage</a><a href="#lead-status">Lead Status</a><a href="#lead-object">Lead Stage</a><a href="#deal-stage">Deal Stage</a><a href="#model">Simple model</a><a href="#ai">AI impact</a></div><div><h3>Apply it</h3><p>Before redesigning properties or pipelines, check whether the CRM is ready for change.</p><a href="/readiness.html">CRM Readiness Check →</a></div></aside></div></main>
+<footer class="site-footer"><div class="shell footer-top"><div><a class="brand brand-light" href="/"><span>RevOps</span><strong>Hubs</strong></a><p>Frameworks, tools and research for building better B2B revenue systems.</p></div><div class="footer-links"><div><b>Explore</b><a href="/learn.html">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a></div><div><b>About</b><a href="/about.html">About RevOpsHubs</a><a href="https://www.smartlinks.pt/" rel="external">SmartLinks</a></div></div></div><div class="shell footer-bottom"><span>RevOpsHubs is a SmartLinks initiative.</span><span>© 2026 SmartLinks</span></div></footer><script src="/app.js" defer></script></body></html>

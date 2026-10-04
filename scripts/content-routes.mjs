@@ -51,6 +51,12 @@ export const articlePairs = [
     enFile:'learn/ai-ready-revenue-system/index.html', enPath:'/learn/ai-ready-revenue-system/', enMarkdown:'/markdown/learn/ai-ready-revenue-system.md',
     ptFile:'pt/learn/sistema-de-receita-preparado-para-ia/index.html', ptPath:'/pt/learn/sistema-de-receita-preparado-para-ia/', ptMarkdown:'/pt/markdown/learn/sistema-de-receita-preparado-para-ia.md',
     keywords:['AI readiness','Revenue Operations AI','AI governance']
+  },
+  {
+    id:'hubspot-pricing-credits-emea', legacyFile:'hubspot-pricing-credits-emea.html',
+    enFile:'learn/hubspot-pricing-credits-emea/index.html', enPath:'/learn/hubspot-pricing-credits-emea/', enMarkdown:'/markdown/learn/hubspot-pricing-credits-emea.md',
+    ptFile:'pt/learn/hubspot-pricing-creditos-emea/index.html', ptPath:'/pt/learn/hubspot-pricing-creditos-emea/', ptMarkdown:'/pt/markdown/learn/hubspot-pricing-creditos-emea.md',
+    keywords:['HubSpot pricing 2026','HubSpot Credits','HubSpot EMEA pricing','flexible seats and credits','AI usage-based pricing']
   }
 ];
 

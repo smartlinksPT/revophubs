@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent Operating Contract: a framework for production AI agents — RevOpsHubs</title>
+<meta name="description" content="A prompt does not define ownership, permissions, approvals, budget or rollback. Use the Agent Operating Contract to move AI agents into production with explicit limits.">
+<link rel="canonical" href="https://revophubs.com/articles/agent-operating-contract.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/content.css"></head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="RevOpsHubs home"><span>RevOps</span><strong>Hubs</strong></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/learn.html" aria-current="page">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a><a href="/model.html">Methodology</a></nav><a class="language-switch" href="/pt/articles/agent-operating-contract.html" lang="pt-PT" hreflang="pt-PT" aria-label="Ver em português">PT</a><a class="button button-small header-cta" href="/assessment.html">Assess your Revenue System</a></div></header>
+<main id="main"><div class="shell article-layout"><article><header class="article-head"><p class="tag">Agents · Governance · Framework · 13 min read</p><h1>A good prompt is not enough. An agent needs an operating contract.</h1><p class="article-deck">Before an agent goes into production, you should know what it is trying to achieve, which context it may use, what it can do, where it must stop and how success will be measured.</p><p class="article-byline">RevOpsHubs framework · 4 October 2026</p></header><div class="article-body">
+<p>Most agent experiments begin the same way.</p>
+<p>You write a prompt. Test it. Refine it. Connect a tool. Test again. The output looks promising and someone asks: “can we let this run automatically?”</p>
+<p>That is exactly where the prompt stops being enough.</p>
+<p>A prompt can tell an agent <em>how to reason or respond</em>. It does not, by itself, settle questions such as:</p>
+<ul><li>who owns the agent;</li><li>which data it may access;</li><li>which fields it may change;</li><li>which actions require approval;</li><li>how much it may spend;</li><li>when it should stop and escalate;</li><li>how quality is measured;</li><li>how to shut it down without breaking the process.</li></ul>
+<p>Those are no longer prompt questions. They are operating design questions.</p>
+<div class="article-cta"><h3>RevOpsHubs Thesis</h3><p><strong>A production agent needs an operating contract: an explicit definition of the work, context, autonomy, risk, economics and accountability under which it may operate.</strong></p></div>
+
+<h2 id="what-is">What is an Agent Operating Contract?</h2>
+<p>The <strong>Agent Operating Contract</strong> is a RevOpsHubs framework. It is not a legal contract, and it should not become a 20-page technical specification.</p>
+<p>It is an operational one-pager that accompanies an agent as it moves from experiment to pilot or production.</p>
+<p>Its job is to turn something vague — “we have an agent helping Sales” — into a governable unit of work.</p>
+<p>RevOps, the process owner and the technology administrator should all be able to read it. If only the agent builder can understand it, it is still too technical.</p>
+
+<h2 id="contract">The 10 decisions in the contract</h2>
+<p>We propose ten blocks. The order is deliberate: you define the work before you spend time perfecting the prompt.</p>
+<div class="reason-list">
+<article><b>01</b><div><h3>Objective — what outcome should it produce?</h3><p>Not “help Sales.” Use something observable: prepare a meeting brief, classify an inbound request, flag risk in an opportunity, update specific data.</p></div></article>
+<article><b>02</b><div><h3>Owner — who is accountable for performance?</h3><p>A named person should define acceptable quality, review failures and approve material changes. The technical builder may not be the business owner.</p></div></article>
+<article><b>03</b><div><h3>Context — what information may it use?</h3><p>Define systems and sources: CRM, notes, email, documents, knowledge base, web, ERP. Available context is not the same as permitted context.</p></div></article>
+<article><b>04</b><div><h3>Tools — which capabilities does it have?</h3><p>Search, create task, update field, send email, call API, use MCP. Tools are operational power and should be listed explicitly.</p></div></article>
+<article><b>05</b><div><h3>Permissions — where can it read and write?</h3><p>Objects, fields, systems and scopes. “HubSpot access” is too broad. Reading Deals and changing Deal Stage are materially different capabilities.</p></div></article>
+<article><b>06</b><div><h3>Approval — where must it ask?</h3><p>Define autonomous actions, approval-gated actions and prohibited actions. OpenAI supports human-review pauses for sensitive tool calls; the design principle matters regardless of platform.</p></div></article>
+<article><b>07</b><div><h3>Budget — how much capacity may it consume?</h3><p>Runs, credits, tokens, compute time or external calls. As pricing becomes usage-based, budget becomes part of agent design rather than only procurement.</p></div></article>
+<article><b>08</b><div><h3>Quality — how will you know it works?</h3><p>Define outcome and quality metrics, not just run count. Accuracy, acceptance without correction, rework, time saved, conversion or cost per outcome.</p></div></article>
+<article><b>09</b><div><h3>Escalation — when should it stop and hand off?</h3><p>Missing data, conflicting rules, low confidence, commercial exceptions, retry limits or risky actions. A reliable agent also knows when not to continue.</p></div></article>
+<article><b>10</b><div><h3>Rollback — how do you go back?</h3><p>How do you disable the agent, revoke connections, remove write access, restore data or return to the previous version? The exit path belongs in the design.</p></div></article>
+</div>
+
+<h2 id="prompt">So does the prompt matter less?</h2>
+<p>No. It matters more because it no longer has to carry responsibilities that belong elsewhere.</p>
+<p>Modern agent platforms already separate these layers. In OpenAI, an agent definition can include instructions, tools, guardrails, MCP servers, handoffs and structured outputs. Approval mechanisms can pause a run before a sensitive action. HubSpot lets teams configure MCP tools, simulate runs and set monthly limits.</p>
+<p>The prompt is part of the contract. It is not the contract.</p>
+<blockquote>Prompt engineering tells the agent how to work. Operating design decides what work may exist and under which limits.</blockquote>
+
+<h2 id="example">Example: an inbound qualification agent in HubSpot</h2>
+<p>Consider a B2B company using HubSpot that receives contact requests through its website. The goal is to reduce manual research and give Sales better context before the first response.</p>
+<p>A lightweight operating contract could look like this:</p>
+<div class="definition-table">
+<div class="definition-head"><span>Block</span><span>Operating decision</span></div>
+<div><span><strong>Objective</strong></span><span>Prepare a qualification recommendation and account context within five minutes of a new inbound request.</span></div>
+<div><span><strong>Owner</strong></span><span>RevOps Manager; Head of Sales validates qualification criteria.</span></div>
+<div><span><strong>Context</strong></span><span>HubSpot contact/company, conversion page, existing history, ICP rules and public domain research.</span></div>
+<div><span><strong>Tools</strong></span><span>Read CRM, web research, create note and task. No autonomous outbound email.</span></div>
+<div><span><strong>Permissions</strong></span><span>May populate approved enrichment fields. Cannot change Lifecycle Stage, Deal Stage, owner or consent.</span></div>
+<div><span><strong>Approval</strong></span><span>Notes and tasks can be created automatically. External communication requires a human.</span></div>
+<div><span><strong>Budget</strong></span><span>Monthly run limit defined after simulating a representative sample.</span></div>
+<div><span><strong>Quality</strong></span><span>Internal target: strong agreement with human review plus measurable reduction in preparation time. Calibrate during pilot.</span></div>
+<div><span><strong>Escalation</strong></span><span>Missing domain, territory conflict, contradictory data or an unfamiliar ICP case → human queue.</span></div>
+<div><span><strong>Rollback</strong></span><span>Disable agent, remove write access and restore changed fields from available history/audit data.</span></div>
+</div>
+<p>Notice what is not here: two hundred lines about personality, tone or writing style.</p>
+<p>Those can matter. But what makes this agent a reliable part of the Revenue System is the operating boundary around it.</p>
+
+<h2 id="risk-tiers">Not every agent needs the same governance depth</h2>
+<p>A one-page contract should not become universal bureaucracy. Governance depth should match operational surface.</p>
+<div class="governance-grid">
+<article><span>Tier A · Read-only</span><h3>Research and recommendation</h3><p>Uses context and produces suggestions without writing to systems or contacting customers. Lightweight contract, logs and ownership still apply.</p></article>
+<article><span>Tier B · Internal write</span><h3>Changes internal work</h3><p>Updates fields, creates tasks, notes or tickets. Requires explicit permissions, simulation, auditability and rollback.</p></article>
+<article><span>Tier C · External impact</span><h3>Acts on customers or money</h3><p>Sends, publishes, deletes, commits pricing, changes critical states or takes hard-to-reverse actions. Approval and guardrails should be much stronger.</p></article>
+</div>
+<p>This connects directly to the <a href="/learn/shadow-agents/">Shadow Agent Risk Model</a>: the larger the context, tool, write and cost surface, the more explicit the operating contract should be.</p>
+
+<h2 id="testing">The contract also defines how to test</h2>
+<p>A common mistake is to test only whether the agent produces a good answer.</p>
+<p>In production, the whole system needs testing:</p>
+<ul><li>Did it choose the right tool?</li><li>Did it refuse work outside scope?</li><li>Did it request approval when required?</li><li>Did it escalate when context was insufficient?</li><li>Did it stay inside run and budget limits?</li><li>Did it improve the process or merely create more review work?</li></ul>
+<p>OpenAI recommends evaluating agent workflows through traces, tool calls, guardrails and handoffs, rather than judging only the final response. HubSpot can simulate agent runs without changing CRM data or consuming credits, which gives teams a practical pre-production testing loop.</p>
+<p>The operating contract provides the acceptance criteria for those tests.</p>
+
+<h2 id="economics">Budget becomes an agent property</h2>
+<p>This is still new territory for many RevOps teams.</p>
+<p>Historically, the marginal cost of another workflow execution was often invisible after the software subscription was purchased. Agents bring a more direct relationship between work performed and consumption.</p>
+<p>In HubSpot, <a href="/learn/hubspot-pricing-credits-emea/">the new EMEA pricing model already makes credits an explicit unit of capacity</a>. HubSpot recommends simulating runs to estimate cost and setting monthly limits.</p>
+<p>That makes “budget” a behavioral constraint, not just an administrative line item.</p>
+<p>An agent allowed to run 500 times a day is operationally different from one capped at 20 priority cases.</p>
+
+<h2 id="monday">What to do on Monday morning</h2>
+<p>Pick one agent already in testing, or one somebody wants to move into production.</p>
+<ol><li>Write the objective as one observable outcome.</li><li>Name one business owner.</li><li>List context sources and remove those that are not necessary.</li><li>List every tool and mark read/write.</li><li>Create three columns: autonomous, approval required, prohibited.</li><li>Set a pilot usage limit.</li><li>Choose two metrics: one quality metric and one outcome metric.</li><li>Write the escalation conditions.</li><li>Test 20–50 representative cases, including edge cases.</li><li>Document how to disable or roll back.</li></ol>
+<p>If you cannot fill these sections, you do not have a prompt problem yet. You have an operating design problem.</p>
+
+<h2 id="conclusion">Agents need freedom. But bounded freedom.</h2>
+<p>An agent that asks permission for everything is not especially useful. An agent that can do everything is not especially governable.</p>
+<p>The interesting design space is in the middle.</p>
+<p>Give the agent enough autonomy to remove human work, while making context, permissions, risk, economics and accountability explicit.</p>
+<p>That is what the Agent Operating Contract is for.</p>
+<blockquote>Do not move an agent into production because the prompt is good. Move it into production when the system around it is clear.</blockquote>
+
+<div class="references"><h2>Public sources</h2><ul>
+<li><a href="https://developers.openai.com/api/docs/guides/agents/define-agents" target="_blank" rel="noopener noreferrer">OpenAI Developers — Agent definitions</a></li>
+<li><a href="https://developers.openai.com/api/docs/guides/agents/guardrails-approvals" target="_blank" rel="noopener noreferrer">OpenAI Developers — Guardrails and human review</a></li>
+<li><a href="https://developers.openai.com/api/docs/guides/agent-evals" target="_blank" rel="noopener noreferrer">OpenAI Developers — Evaluate agent workflows</a></li>
+<li><a href="https://knowledge.hubspot.com/ai/review-estimated-credit-costs-when-using-agents" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Test and control agent credit usage</a></li>
+<li><a href="https://knowledge.hubspot.com/integrations/customize-breeze-agents-with-hubspot-mcp-client" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Connect apps to HubSpot's AI agents</a></li>
+</ul></div>
+<div class="next-reading"><h2>Keep going</h2><div class="next-reading-grid"><a href="/learn/shadow-agents/">Shadow Agents: the new governance problem →</a><a href="/articles/ai-ready-revenue-system.html">AI readiness starts before AI →</a><a href="/learn/hubspot-pricing-credits-emea/">HubSpot Credits and agent economics →</a><a href="/articles/revops-operating-system.html">What is a Revenue System? →</a></div></div>
+</div></article><aside class="article-aside"><div><h3>In this article</h3><a href="#what-is">What the contract is</a><a href="#contract">The 10 decisions</a><a href="#example">HubSpot example</a><a href="#risk-tiers">Risk tiers</a><a href="#testing">How to test</a><a href="#monday">Use it Monday</a></div><div><h3>Template</h3><p>Objective · Owner · Context · Tools · Permissions · Approval · Budget · Quality · Escalation · Rollback.</p><a href="#contract">Copy the framework →</a></div></aside></div></main>
+<footer class="site-footer"><div class="shell footer-top"><div><a class="brand brand-light" href="/"><span>RevOps</span><strong>Hubs</strong></a><p>Frameworks, tools and research for building better B2B revenue systems.</p></div><div class="footer-links"><div><b>Explore</b><a href="/learn.html">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a><a href="/model.html">Methodology</a></div><div><b>About</b><a href="/about.html">About RevOpsHubs</a><a href="https://www.smartlinks.pt/" rel="external">SmartLinks</a></div></div></div><div class="shell footer-bottom"><span>RevOpsHubs is a SmartLinks research and education initiative.</span><span>© 2026 SmartLinks</span></div></footer><script src="/app.js" defer></script></body></html>

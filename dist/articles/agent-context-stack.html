@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CRM as an Agent Context System: the Agent Context Stack — RevOpsHubs</title><meta name="description" content="A CRM can contain the right data and still lack enough context for agents. Use the Agent Context Stack: Identity, Relationship, State, History, Intent, Rules and Permissions."><link rel="canonical" href="https://revophubs.com/articles/agent-context-stack.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/content.css"></head><body>
+<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="RevOpsHubs home"><span>RevOps</span><strong>Hubs</strong></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/learn.html" aria-current="page">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a><a href="/model.html">Methodology</a></nav><a class="language-switch" href="/pt/articles/agent-context-stack.html" lang="pt-PT" hreflang="pt-PT">PT</a><a class="button button-small header-cta" href="/assessment.html">Assess your Revenue System</a></div></header>
+<main id="main"><div class="shell article-layout"><article><header class="article-head"><p class="tag">CRM · Agents · Context · 13 min read</p><h1>The CRM is no longer only the System of Record. It is becoming the Context System for agents.</h1><p class="article-deck">A CRM can contain the right data and still fail to answer the question an agent needs in order to act. In an agentic operating model, data quality is necessary but not sufficient: usable context becomes a production dependency.</p><p class="article-byline">RevOpsHubs analysis · 4 October 2026</p></header><div class="article-body">
+<p>For years, the core CRM question was relatively simple: <strong>do we have the right data in the system?</strong></p>
+<p>Agents change the question.</p>
+<p>An agent does not only need to know that a contact, company or deal exists. It needs to understand <strong>who it is, how it relates to the rest of the system, its current state, what happened before, what seems to be happening next, which rules apply and what the agent is allowed to do</strong>.</p>
+<p>That is context.</p>
+<div class="article-cta"><h3>RevOpsHubs Thesis</h3><p><strong>The CRM remains the System of Record. But for agents it is also becoming a Context System: the layer that turns distributed data into a sufficiently coherent representation of the business to support a decision.</strong></p></div>
+
+<h2 id="data-is-not-context">Data is not context</h2>
+<p>Picture a deal with 80 correctly populated properties.</p>
+<p>An agent receives one instruction: “decide the next best action.”</p>
+<p>Amount, close date, pipeline and owner may not be enough. The agent may also need to know:</p>
+<ul><li>who the decision maker is and who is only a user;</li><li>whether the main contact is still engaged;</li><li>what each side committed to in the last conversation;</li><li>whether another deal is open for the same account;</li><li>why the opportunity is actually stalled;</li><li>which observable criteria allow movement to the next stage;</li><li>whether it can only recommend an action or execute it.</li></ul>
+<p>The data may already exist. The question is whether it is associated correctly, current, semantically stable and available in a form that is useful for that decision.</p>
+<p>This is why <a href="/learn/semantic-debt/">Semantic Debt</a> and context readiness are different problems. Semantic Debt asks whether information has stable meaning. Context readiness asks whether the agent has the right combination of information for a specific job.</p>
+
+<h2 id="stack">The Agent Context Stack</h2>
+<p>RevOpsHubs uses seven layers to test whether an agent has enough operating context.</p>
+<div class="reason-list">
+<article><b>01</b><div><h3>Identity — what entity is this?</h3><p>Contact, company, deal, ticket or another object. Can the agent identify the right entity, detect meaningful duplicates and understand which records represent the same real-world thing?</p></div></article>
+<article><b>02</b><div><h3>Relationship — how is it connected?</h3><p>Associations, buying-committee role, parent company, territory, owner, related deals, products and relationships between people. An isolated record rarely carries enough context.</p></div></article>
+<article><b>03</b><div><h3>State — where is it now?</h3><p>Lifecycle, sales stage, onboarding state, risk, renewal, SLA or another current operating state. The agent needs an authoritative view of the present.</p></div></article>
+<article><b>04</b><div><h3>History — what happened before?</h3><p>Emails, meetings, stage changes, tasks, notes, proposals and prior commitments. Without history, an agent can make a logically correct but operationally absurd recommendation.</p></div></article>
+<article><b>05</b><div><h3>Intent — what appears to be happening next?</h3><p>Goals, urgency, objections, interest, risks and likely next step. This is where observed facts must be separated from inference. Intent can be useful without being treated as absolute truth.</p></div></article>
+<article><b>06</b><div><h3>Rules — which rules apply?</h3><p>ICP, qualification, stage criteria, pricing, discount policy, SLAs, territory rules, hand-offs and exceptions. Without rules, the agent has descriptive context but not operating context.</p></div></article>
+<article><b>07</b><div><h3>Permissions — what may it actually do?</h3><p>Which data it can read, which fields it can write, which messages it may send, which actions require approval and when it must escalate to a person.</p></div></article>
+</div>
+<p>Together, these seven layers form the <strong>Agent Context Stack</strong>.</p>
+<blockquote>An agent does not need “more data”. It needs enough context for the decision we are asking it to make.</blockquote>
+
+<h2 id="why-now">Why this matters now</h2>
+<p>Agents can already combine multiple sources of context and take action.</p>
+<div class="source-note"><strong>Evidence</strong><br>HubSpot's public Agent Builder documentation lets teams define runtime inputs, persistent knowledge, CRM read/write access and external MCP actions. HubSpot itself uses examples where agents combine deal details, associated company information and recent activity to analyse onboarding.</div>
+<p>In ChatGPT, MCP apps can also move beyond search and reading into write and modify actions, with workspace controls and access governance.</p>
+<p>The shift is architectural, not merely technical: once an agent can read across systems and act, context quality becomes a production dependency.</p>
+
+<h2 id="example">Example: inbound qualification</h2>
+<p>Imagine an agent that receives inbound leads and recommends whether they should go to SDR, nurture or disqualification.</p>
+<p>A shallow implementation may provide title, company, employee count, source and pages visited.</p>
+<p>A Context Stack implementation asks more:</p>
+<ul><li><strong>Identity:</strong> do this contact and company already exist? Are there duplicates or strategic accounts?</li><li><strong>Relationship:</strong> is there an open deal, customer relationship or existing owner?</li><li><strong>State:</strong> where are they in the lifecycle and sales process now?</li><li><strong>History:</strong> have there been prior meetings, lost deals or requests?</li><li><strong>Intent:</strong> does behaviour indicate early research or an explicit need?</li><li><strong>Rules:</strong> what are the current ICP and sales-acceptance criteria?</li><li><strong>Permissions:</strong> may the agent only recommend, or also update Lifecycle Stage, assign an owner and create tasks?</li></ul>
+<p>The same model applies to meeting preparation, next-best-action, onboarding, support and renewal.</p>
+
+<h2 id="failure-modes">Five failures that look like AI problems but are context problems</h2>
+<div class="governance-grid">
+<article><span>Association</span><h3>The right data is on the wrong record</h3><p>The contact data is valid, but the contact is attached to the wrong company or multiple deals without a clear role.</p></article>
+<article><span>Recency</span><h3>The state is stale</h3><p>The agent treats “Open deal” as current reality even though the process moved elsewhere.</p></article>
+<article><span>Semantics</span><h3>The meaning is unstable</h3><p>“Qualified” means different things to different teams. Automation scales a human ambiguity.</p></article>
+<article><span>Inference</span><h3>Intent is treated as fact</h3><p>A probabilistic signal starts driving action without confidence levels or validation.</p></article>
+<article><span>Authority</span><h3>The agent does not know which rule wins</h3><p>CRM, spreadsheet and internal documentation disagree. There is no source of truth or precedence rule.</p></article>
+<article><span>Permission</span><h3>Context is confused with autonomy</h3><p>Because the agent can infer the next step, the design assumes it may also execute it.</p></article>
+</div>
+
+<h2 id="context-contract">Design context by use case</h2>
+<p>We do not recommend building one universal “mega context” for every agent.</p>
+<p>That increases cost, noise, excessive permissions and evaluation difficulty.</p>
+<p>For each use case, define a minimum <strong>Context Contract</strong>:</p>
+<ol><li>which entity starts the work;</li><li>which relationships are mandatory;</li><li>which state must be current;</li><li>which history window matters;</li><li>which intent signals may be used and at what confidence;</li><li>which rules are authoritative;</li><li>which permissions and approvals constrain execution.</li></ol>
+<p>This connects directly to the <a href="/learn/ai-agent-operating-contract/">Agent Operating Contract</a>. The Operating Contract governs the agent. The Context Contract governs the minimum information the agent needs in order to work.</p>
+
+<h2 id="test">Test context before testing the prompt</h2>
+<p>A great prompt cannot compensate for broken relationships, stale states or contradictory rules.</p>
+<p>Before production, choose one use case and test the seven layers.</p>
+<div class="article-cta"><h3>Agent Context Readiness Check</h3><p>Choose one use case and assess Identity, Relationship, State, History, Intent, Rules and Permissions. The result classifies the context as <strong>Ready, Constrained or Unsafe</strong>.</p><p><a href="/tools/agent-context-readiness/">Run the Agent Context Readiness Check →</a></p></div>
+
+<h2 id="conclusion">The next CRM project is not only about data</h2>
+<p>For a long time, improving the CRM meant collecting more data, cleaning properties and increasing adoption.</p>
+<p>That work remains necessary.</p>
+<p>But as agents enter the Revenue System, a new requirement appears: <strong>the system must represent operating context clearly enough for software to make a decision without inventing what is missing.</strong></p>
+<p>That is why the CRM is becoming more than a System of Record.</p>
+<p>It is becoming the Context System where humans, workflows and agents learn what is actually happening in the business.</p>
+
+<div class="references"><h2>Public sources</h2><ul><li><a href="https://knowledge.hubspot.com/ai/create-and-customize-agents-in-the-agent-builder" target="_blank" rel="noopener noreferrer">HubSpot — Create and customize agents in the Agent Builder</a></li><li><a href="https://knowledge.hubspot.com/get-started/manage-your-crm-database" target="_blank" rel="noopener noreferrer">HubSpot — Manage your CRM database</a></li><li><a href="https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-connectors-in-chatgpt" target="_blank" rel="noopener noreferrer">OpenAI — Developer mode and MCP apps in ChatGPT</a></li></ul></div>
+<div class="next-reading"><h2>Keep going</h2><div class="next-reading-grid"><a href="/learn/semantic-debt/">Semantic Debt: when meaning is unstable →</a><a href="/learn/workflow-vs-ai-agent/">Workflow or agent? Choose the right mechanism →</a><a href="/tools/agent-context-readiness/">Agent Context Readiness Check →</a><a href="/tools/agent-operating-contract-builder/">Agent Operating Contract Builder →</a></div></div>
+</div></article><aside class="article-aside"><div><h3>In this article</h3><a href="#data-is-not-context">Data ≠ context</a><a href="#stack">Agent Context Stack</a><a href="#example">Inbound example</a><a href="#failure-modes">Context failures</a><a href="#context-contract">Context Contract</a><a href="#test">Readiness test</a></div><div><h3>Apply it</h3><p>Choose one concrete agent job and test whether the Revenue System provides all seven context layers.</p><a href="/tools/agent-context-readiness/">Run the check →</a></div></aside></div></main>
+<footer class="site-footer"><div class="shell footer-top"><div><a class="brand brand-light" href="/"><span>RevOps</span><strong>Hubs</strong></a><p>Frameworks, tools and research for building better B2B revenue systems.</p></div><div class="footer-links"><div><b>Explore</b><a href="/learn.html">Learn</a><a href="/hubs.html">Hubs</a><a href="/tools.html">Tools</a><a href="/research.html">Research</a></div><div><b>About</b><a href="/about.html">About RevOpsHubs</a><a href="https://www.smartlinks.pt/" rel="external">SmartLinks</a></div></div></div><div class="shell footer-bottom"><span>RevOpsHubs is a SmartLinks research and education initiative.</span><span>© 2026 SmartLinks</span></div></footer><script src="/app.js" defer></script></body></html>

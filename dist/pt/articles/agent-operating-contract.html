@@ -1,0 +1,106 @@
+<!doctype html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent Operating Contract: framework para pôr agentes de IA em produção — RevOpsHubs</title>
+<meta name="description" content="Um prompt não define ownership, permissões, aprovações, orçamento ou rollback. Use o Agent Operating Contract para colocar agentes de IA em produção com limites claros.">
+<link rel="canonical" href="https://revophubs.com/pt/articles/agent-operating-contract.html"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/content.css"></head><body>
+<a class="skip-link" href="#main">Saltar para o conteúdo</a>
+<header class="site-header"><div class="shell header-inner"><a class="brand" href="/pt/" aria-label="RevOpsHubs início"><span>RevOps</span><strong>Hubs</strong></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Navegação principal"><a href="/pt/learn.html" aria-current="page">Aprender</a><a href="/pt/hubs.html">Hubs</a><a href="/pt/tools.html">Ferramentas</a><a href="/pt/research.html">Investigação</a><a href="/pt/model.html">Metodologia</a></nav><a class="language-switch" href="/articles/agent-operating-contract.html" lang="en" hreflang="en" aria-label="View in English">EN</a><a class="button button-small header-cta" href="/pt/assessment.html">Avaliar o seu Revenue System</a></div></header>
+<main id="main"><div class="shell article-layout"><article><header class="article-head"><p class="tag">Agentes · Governance · Framework · 13 min de leitura</p><h1>Um bom prompt não chega. Um agente precisa de um contrato operacional.</h1><p class="article-deck">Antes de um agente entrar em produção, deve estar claro o que tenta alcançar, que contexto pode usar, que ações pode executar, onde tem de parar e como sabemos se está a criar valor.</p><p class="article-byline">Framework RevOpsHubs · 4 de outubro de 2026</p></header><div class="article-body">
+<p>A maioria das experiências com agentes começa da mesma forma.</p>
+<p>Escrevemos um prompt. Testamos. Ajustamos. Ligamos uma ferramenta. Voltamos a testar. O resultado parece bom e alguém pergunta: “podemos pôr isto a correr automaticamente?”</p>
+<p>É precisamente aí que o prompt deixa de chegar.</p>
+<p>Um prompt consegue explicar ao agente <em>como deve pensar ou responder</em>. Mas não resolve sozinho perguntas como:</p>
+<ul><li>quem é responsável pelo agente;</li><li>que dados pode consultar;</li><li>que propriedades pode alterar;</li><li>que ações exigem aprovação;</li><li>quanto pode gastar;</li><li>quando deve desistir e escalar;</li><li>como medimos qualidade;</li><li>como o desligamos sem partir o processo.</li></ul>
+<p>Essas perguntas já não pertencem apenas ao prompt. Pertencem ao desenho operacional.</p>
+<div class="article-cta"><h3>Tese RevOpsHubs</h3><p><strong>Um agente em produção precisa de um contrato operacional: uma definição explícita do trabalho, contexto, autonomia, risco, economia e responsabilidade sob os quais pode operar.</strong></p></div>
+
+<h2 id="what-is">O que é um Agent Operating Contract?</h2>
+<p>O <strong>Agent Operating Contract</strong> é um framework RevOpsHubs. Não é um contrato jurídico, nem um documento técnico de dezenas de páginas.</p>
+<p>É uma ficha operacional, idealmente de uma página, que acompanha cada agente que passa de experiência para piloto ou produção.</p>
+<p>Serve para transformar uma coisa vaga — “temos um agente que ajuda Sales” — numa unidade de trabalho governável.</p>
+<p>O contrato deve conseguir ser lido por RevOps, pelo owner do processo e por quem administra a tecnologia. Se só o builder do agente o consegue compreender, ainda está demasiado técnico.</p>
+
+<h2 id="contract">As 10 decisões do contrato</h2>
+<p>Propomos dez blocos. A ordem é deliberada: o prompt aparece depois de sabermos que trabalho estamos realmente a delegar.</p>
+<div class="reason-list">
+<article><b>01</b><div><h3>Objective — que resultado deve produzir?</h3><p>Não “ajudar vendas”. Algo observável: preparar um briefing antes da reunião, classificar um pedido de entrada, identificar risco numa oportunidade, atualizar dados específicos.</p></div></article>
+<article><b>02</b><div><h3>Owner — quem responde pelo desempenho?</h3><p>Uma pessoa concreta deve decidir qualidade aceitável, rever falhas e aprovar mudanças relevantes. O builder técnico pode não ser o owner do resultado.</p></div></article>
+<article><b>03</b><div><h3>Context — que informação pode usar?</h3><p>Defina sistemas e fontes: CRM, notas, emails, documentos, knowledge base, web, ERP. Contexto disponível não significa contexto permitido.</p></div></article>
+<article><b>04</b><div><h3>Tools — que capacidades tem?</h3><p>Pesquisar, criar tarefa, atualizar propriedade, enviar email, chamar API, usar MCP. Ferramentas são poder operacional; devem ser listadas explicitamente.</p></div></article>
+<article><b>05</b><div><h3>Permissions — onde pode ler e escrever?</h3><p>Objetos, propriedades, sistemas e âmbitos. “Acesso ao HubSpot” é demasiado genérico. Ler Deals e alterar Deal Stage são capacidades muito diferentes.</p></div></article>
+<article><b>06</b><div><h3>Approval — onde tem de pedir autorização?</h3><p>Defina ações autónomas, ações com aprovação e ações proibidas. OpenAI suporta pausas para human review em tool calls sensíveis; o princípio é mais importante do que a tecnologia escolhida.</p></div></article>
+<article><b>07</b><div><h3>Budget — quanta capacidade pode consumir?</h3><p>Runs, créditos, tokens, tempo de computação ou chamadas externas. Com pricing por consumo, o orçamento faz parte do design do agente e não apenas da compra de software.</p></div></article>
+<article><b>08</b><div><h3>Quality — como sabemos que está a funcionar?</h3><p>Defina métricas de resultado e de qualidade. Não apenas “número de execuções”. Precisão, aceitação sem correção, retrabalho, tempo poupado, conversão ou custo por resultado.</p></div></article>
+<article><b>09</b><div><h3>Escalation — quando deve parar e passar a um humano?</h3><p>Dados em falta, regras em conflito, baixa confiança, exceções comerciais, número máximo de tentativas ou ações de risco. Um agente fiável também sabe quando não deve continuar.</p></div></article>
+<article><b>10</b><div><h3>Rollback — como voltamos atrás?</h3><p>Como desativar, revogar ligações, retirar escrita, restaurar dados ou voltar à versão anterior? A saída deve existir antes da entrada em produção.</p></div></article>
+</div>
+
+<h2 id="prompt">Então o prompt deixa de ser importante?</h2>
+<p>Não. Torna-se mais importante porque deixa de carregar responsabilidades que não lhe pertencem.</p>
+<p>As próprias ferramentas de agentes estão a separar estas camadas. Na OpenAI, uma definição de agente pode incluir instruções, ferramentas, guardrails, MCP, handoffs e outputs estruturados. Os mecanismos de aprovação podem interromper uma execução antes de uma ação sensível. A HubSpot, por sua vez, permite configurar ferramentas MCP, simular execuções e definir limites mensais.</p>
+<p>O prompt é uma parte do contrato. Não é o contrato.</p>
+<blockquote>Prompt engineering diz ao agente como trabalhar. Operating design decide que trabalho pode existir e sob que limites.</blockquote>
+
+<h2 id="example">Exemplo: agente de qualificação inbound em HubSpot</h2>
+<p>Imagine uma empresa B2B com HubSpot que recebe pedidos de contacto pelo site. O objetivo é reduzir o trabalho manual de pesquisa e preparar melhor a primeira resposta comercial.</p>
+<p>Um contrato operacional simples poderia ser assim:</p>
+<div class="definition-table">
+<div class="definition-head"><span>Bloco</span><span>Decisão operacional</span></div>
+<div><span><strong>Objective</strong></span><span>Preparar uma recomendação de qualificação e contexto da conta até 5 minutos após um novo pedido.</span></div>
+<div><span><strong>Owner</strong></span><span>RevOps Manager; Head of Sales valida critérios de qualificação.</span></div>
+<div><span><strong>Context</strong></span><span>Contacto e empresa no HubSpot, página de conversão, histórico existente, regras de ICP e pesquisa pública do domínio.</span></div>
+<div><span><strong>Tools</strong></span><span>Leitura de CRM, pesquisa web, criação de nota e tarefa. Sem envio autónomo de email.</span></div>
+<div><span><strong>Permissions</strong></span><span>Pode preencher propriedades de enriquecimento aprovadas. Não pode alterar Lifecycle Stage, Deal Stage, owner ou consentimento.</span></div>
+<div><span><strong>Approval</strong></span><span>Nota e tarefa podem ser criadas automaticamente. Qualquer comunicação externa exige humano.</span></div>
+<div><span><strong>Budget</strong></span><span>Limite mensal de runs definido após simulação de uma amostra representativa.</span></div>
+<div><span><strong>Quality</strong></span><span>Target interno: elevada concordância com revisão humana e redução mensurável do tempo de preparação. O target é calibrado no piloto.</span></div>
+<div><span><strong>Escalation</strong></span><span>Empresa sem domínio, conflito de território, dados contraditórios ou caso fora do ICP conhecido → fila humana.</span></div>
+<div><span><strong>Rollback</strong></span><span>Desativar agente, remover escrita e reverter campos alterados através do histórico/auditoria disponível.</span></div>
+</div>
+<p>Repara no que não está aqui: uma descrição de 200 linhas sobre personalidade, tom ou estilo.</p>
+<p>Isso pode existir. Mas o que transforma este agente em parte confiável do Revenue System são sobretudo os limites operacionais.</p>
+
+<h2 id="risk-tiers">Nem todos os agentes precisam do mesmo nível de governance</h2>
+<p>Um contrato de uma página não deve transformar-se em burocracia universal. A profundidade deve acompanhar a superfície de risco.</p>
+<div class="governance-grid">
+<article><span>Nível A · Read-only</span><h3>Pesquisa e recomendação</h3><p>Consulta contexto e produz sugestões, sem escrever em sistemas nem contactar clientes. Contrato leve, logs e owner continuam necessários.</p></article>
+<article><span>Nível B · Internal write</span><h3>Altera trabalho interno</h3><p>Atualiza propriedades, cria tarefas, notas ou tickets. Exige permissões explícitas, simulação, auditoria e rollback.</p></article>
+<article><span>Nível C · External impact</span><h3>Age sobre clientes ou dinheiro</h3><p>Envia, publica, elimina, compromete preço, altera estados críticos ou executa ações difíceis de reverter. Aprovação e guardrails devem ser muito mais fortes.</p></article>
+</div>
+<p>Esta classificação liga diretamente ao nosso <a href="/pt/learn/shadow-agents/">Shadow Agent Risk Model</a>: quanto maior a superfície de contexto, ferramentas, escrita e custo, mais explícito precisa de ser o contrato.</p>
+
+<h2 id="testing">O contrato também define como testar</h2>
+<p>Um erro frequente é testar apenas se o agente produz uma boa resposta.</p>
+<p>Em produção, precisamos de testar o sistema completo:</p>
+<ul><li>selecionou a ferramenta certa?</li><li>recusou uma ação que estava fora do âmbito?</li><li>pediu aprovação quando devia?</li><li>escalou quando faltava contexto?</li><li>manteve-se dentro do orçamento e do número de runs?</li><li>o resultado melhorou o processo ou apenas criou mais revisão?</li></ul>
+<p>A OpenAI recomenda avaliações de workflows através de traces, tool calls, guardrails e handoffs, em vez de avaliar apenas a resposta final. A HubSpot permite simular agentes sem executar alterações no CRM e sem consumir créditos, o que torna possível testar o comportamento antes de escalar.</p>
+<p>O contrato fornece precisamente os critérios contra os quais o teste deve ser feito.</p>
+
+<h2 id="economics">O orçamento passa a ser uma propriedade do agente</h2>
+<p>Esta parte ainda é nova para muitas equipas de RevOps.</p>
+<p>Até agora, o custo de um workflow era muitas vezes invisível depois de comprada a licença. Com agentes, começa a haver uma relação mais direta entre trabalho executado e consumo.</p>
+<p>No caso da HubSpot, <a href="/pt/learn/hubspot-pricing-creditos-emea/">o novo modelo EMEA já torna os créditos uma unidade explícita de capacidade</a>. A própria plataforma recomenda simular execuções para estimar custo e definir limites mensais.</p>
+<p>Isto significa que “budget” deixa de ser um campo administrativo. Passa a ser parte do comportamento permitido.</p>
+<p>Um agente que pode correr 500 vezes por dia não é operacionalmente igual a um agente limitado a 20 casos prioritários.</p>
+
+<h2 id="monday">O que faria na segunda-feira de manhã</h2>
+<p>Escolha um agente que já esteja em teste ou que alguém queira colocar em produção.</p>
+<ol><li>Escreva o objetivo numa frase que tenha um resultado observável.</li><li>Nomeie um owner de negócio.</li><li>Liste as fontes de contexto e elimine as que não são necessárias.</li><li>Liste todas as tools e marque read/write.</li><li>Defina três colunas: autónomo, requer aprovação, proibido.</li><li>Defina um limite de utilização para o piloto.</li><li>Escolha duas métricas: uma de qualidade e uma de resultado.</li><li>Escreva as condições de escalamento.</li><li>Teste 20–50 casos representativos, incluindo exceções.</li><li>Documente como desligar ou recuar.</li></ol>
+<p>Se não conseguir preencher estes pontos, ainda não tem um problema de prompt. Tem um problema de desenho operacional.</p>
+
+<h2 id="conclusion">Os agentes precisam de liberdade. Mas liberdade delimitada.</h2>
+<p>Um agente que pede autorização para tudo não é particularmente útil. Um agente que pode fazer tudo também não é particularmente governável.</p>
+<p>O espaço interessante está no meio.</p>
+<p>Dar autonomia suficiente para retirar trabalho humano, mas tornar explícitos contexto, permissões, risco, economia e responsabilidade.</p>
+<p>É isso que o Agent Operating Contract tenta resolver.</p>
+<blockquote>Não coloque um agente em produção porque o prompt ficou bom. Coloque-o em produção quando o sistema à volta dele estiver claro.</blockquote>
+
+<div class="references"><h2>Fontes públicas</h2><ul>
+<li><a href="https://developers.openai.com/api/docs/guides/agents/define-agents" target="_blank" rel="noopener noreferrer">OpenAI Developers — Agent definitions</a></li>
+<li><a href="https://developers.openai.com/api/docs/guides/agents/guardrails-approvals" target="_blank" rel="noopener noreferrer">OpenAI Developers — Guardrails and human review</a></li>
+<li><a href="https://developers.openai.com/api/docs/guides/agent-evals" target="_blank" rel="noopener noreferrer">OpenAI Developers — Evaluate agent workflows</a></li>
+<li><a href="https://knowledge.hubspot.com/ai/review-estimated-credit-costs-when-using-agents" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Test and control agent credit usage</a></li>
+<li><a href="https://knowledge.hubspot.com/integrations/customize-breeze-agents-with-hubspot-mcp-client" target="_blank" rel="noopener noreferrer">HubSpot Knowledge Base — Connect apps to HubSpot's AI agents</a></li>
+</ul></div>
+<div class="next-reading"><h2>Continue a explorar</h2><div class="next-reading-grid"><a href="/pt/learn/shadow-agents/">Shadow Agents: o novo problema de governance →</a><a href="/pt/articles/ai-ready-revenue-system.html">AI readiness começa antes da IA →</a><a href="/pt/learn/hubspot-pricing-creditos-emea/">HubSpot Credits e economia dos agentes →</a><a href="/pt/articles/revops-operating-system.html">O que é um Revenue System? →</a></div></div>
+</div></article><aside class="article-aside"><div><h3>Neste artigo</h3><a href="#what-is">O que é o contrato</a><a href="#contract">As 10 decisões</a><a href="#example">Exemplo HubSpot</a><a href="#risk-tiers">Níveis de risco</a><a href="#testing">Como testar</a><a href="#monday">Aplicar na segunda-feira</a></div><div><h3>Template</h3><p>Objective · Owner · Context · Tools · Permissions · Approval · Budget · Quality · Escalation · Rollback.</p><a href="#contract">Copiar o framework →</a></div></aside></div></main>
+<footer class="site-footer"><div class="shell footer-top"><div><a class="brand brand-light" href="/pt/"><span>RevOps</span><strong>Hubs</strong></a><p>Frameworks, ferramentas e investigação para construir melhores sistemas de receita B2B.</p></div><div class="footer-links"><div><b>Explorar</b><a href="/pt/learn.html">Aprender</a><a href="/pt/hubs.html">Hubs</a><a href="/pt/tools.html">Ferramentas</a><a href="/pt/research.html">Investigação</a><a href="/pt/model.html">Metodologia</a></div><div><b>Sobre</b><a href="/pt/about.html">Sobre a RevOpsHubs</a><a href="https://www.smartlinks.pt/" rel="external">SmartLinks</a></div></div></div><div class="shell footer-bottom"><span>A RevOpsHubs é uma iniciativa de investigação e educação da SmartLinks.</span><span>© 2026 SmartLinks</span></div></footer><script src="/app.js" defer></script></body></html>

@@ -1,0 +1,36 @@
+/* Text-link visibility: keep editorial hyperlinks visually distinct from body copy. */
+.article-body a:not(.button):not(.button-secondary),
+.article-aside a,
+.source-note a,
+.references a,
+.content-section p a,
+.content-section li a,
+.result-plan a,
+.result-resources a {
+  color:#5300EF;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+
+.article-body a:not(.button):not(.button-secondary):hover,
+.article-aside a:hover,
+.source-note a:hover,
+.references a:hover,
+.content-section p a:hover,
+.content-section li a:hover,
+.result-plan a:hover,
+.result-resources a:hover {
+  color:#4300C5;
+  text-decoration-thickness:2px;
+}
+
+.article-body a:focus-visible,
+.article-aside a:focus-visible,
+.source-note a:focus-visible,
+.references a:focus-visible,
+.content-section p a:focus-visible,
+.content-section li a:focus-visible {
+  outline:2px solid #5300EF;
+  outline-offset:3px;
+}
